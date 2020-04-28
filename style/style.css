@@ -19,7 +19,7 @@
     font-size: 30px;
 }
 
-h1{
+#mainH1{
     text-align: center; /* centering */
     
 
@@ -27,7 +27,8 @@ h1{
 }
 
 #auxillaryH1{
-    text-align: 30%;
+    padding-left: 5%;
+    padding-top: -1%;
 
-    font-size: 1;
+    font-size: 80px;
 }
