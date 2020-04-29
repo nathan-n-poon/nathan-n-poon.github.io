@@ -8,18 +8,25 @@
     font-size: 60px;
 }
 
-#mainH1{
+#index1{
+    background-image: url("../images/index/leaf.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    opacity: 100%;
+    /* background-color: red; */
+}
+
+#salut {
     padding:5% 10%;
     position: absolute;
     font-size: 100px;
     color: whitesmoke;
 }
 
-#index1{
-    background-image: url("../images/index/leaf.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1000px;
-    opacity: 90%;
-    /* background-color: red; */
+#amble {
+    padding:5% 50%;
+    position: absolute;
+    font-size: 50px;
+    color: white;
 }
