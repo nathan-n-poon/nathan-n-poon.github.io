@@ -1,0 +1,19 @@
+#auxillaryNav{
+    position: absolute;
+    margin:7% 80%;
+    background-color: #c4c2bc;
+    height: 40px; 
+    width: 7%;
+    border-radius: 10%;
+  
+    text-align: center;
+    font-size: 30px;
+  }
+
+  #auxillaryH1{
+    position: absolute;
+    padding-left: 5%;
+    padding-top: -1%;
+  
+    font-size: 80px;
+  }

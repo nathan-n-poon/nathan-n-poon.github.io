@@ -1,0 +1,50 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  opacity: 80%;
+  color: green;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+nav li {
+  display: inline-block;
+  padding: 5px 5px;
+}
+
+nav ul{
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+}
+
+nav a {
+  font-weight: normal;
+  padding: 50px 20%;
+  font-size: .80em;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: blueviolet;
+}
+
