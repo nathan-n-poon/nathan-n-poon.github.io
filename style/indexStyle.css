@@ -57,3 +57,11 @@ nav{
     padding-top: 10%;
     color: white;
 }
+
+
+.div_2_img_2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; 
+}
