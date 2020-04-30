@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 #mainNav{
     margin:0 auto;
     background-color: #c4c2bc;
@@ -10,25 +14,26 @@
     font-size: 60px;
 }
 
-#index1{
+#div_1 {
     background-image: url("../images/index/leaf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 1000px;
-    opacity: 100%;
+    width: 100%;
     /* background-color: red; */
 }
 
-#salut {
+#h1_1 {
     padding:5% 10%;
     position: absolute;
     font-size: 100px;
     color: whitesmoke;
 }
 
-#amble {
-    padding:5% 50%;
+#h2_1 {
+    padding:10% 50%;
     position: absolute;
     font-size: 50px;
     color: white;
+    width: 35%;
 }
