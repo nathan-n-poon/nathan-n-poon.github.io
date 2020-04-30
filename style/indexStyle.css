@@ -1,20 +1,24 @@
-body {
+/* body {
     overflow: hidden;
+} */
+
+body {
+    overflow-x: hidden;
 }
 
-#mainNav{
+nav{
     margin:0 auto;
     background-color: #c4c2bc;
-    height: 80px; 
+    height: 7%; 
     width: 75%;
     border-bottom-right-radius: 10%;
     border-bottom-left-radius: 10%;
 
     text-align: center;
-    font-size: 60px;
+    font-size: 300%;
 }
 
-#div_1 {
+.div_1 {
     background-image: url("../images/index/leaf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,17 +27,17 @@ body {
     /* background-color: red; */
 }
 
-#h1_1 {
+.div_1 h1 {
     padding:5% 10%;
     position: absolute;
-    font-size: 100px;
+    font-size: 900%;
     color: whitesmoke;
 }
 
-#h2_1 {
+.div_1 h2 {
     padding:10% 50%;
     position: absolute;
-    font-size: 50px;
+    font-size: 300%;
     color: white;
     width: 35%;
 }
