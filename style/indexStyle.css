@@ -28,16 +28,31 @@ nav{
 }
 
 .div_1 h1 {
-    padding:5% 10%;
+    padding:10% 10%;
     position: absolute;
     font-size: 900%;
     color: whitesmoke;
 }
 
 .div_1 h2 {
-    padding:10% 50%;
+    padding:17% 50%;
     position: absolute;
     font-size: 300%;
     color: white;
     width: 35%;
+}
+
+.div_2 {
+    background-image: url("../images/index/leaf2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.div_2 h1 {
+    padding: auto;
+    font-size: 600%;
+    color: white;
 }
