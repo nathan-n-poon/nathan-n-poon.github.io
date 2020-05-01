@@ -86,7 +86,8 @@ nav{
     color: black;
     padding-top: 7%;
     position: absolute;
-    padding-left: 30%;
+    /* padding-left: 30%; */
+    
     text-align: center;
 }
 
