@@ -2,6 +2,10 @@
     overflow: hidden;
 } */
 
+html {
+    height: 100%;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -22,7 +26,7 @@ nav{
     /* background-image: url("../images/index/leaf.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1000px;
+    height: 100vh;
     width: 100%;
     display: inline-block;
     position: relative;
@@ -36,21 +40,6 @@ nav{
     height: 100%;
     z-index: -1;
 }
-
-/* div {
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-img {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-} */
 
 .div_1 h1 {
     padding:10% 10%;
@@ -71,8 +60,10 @@ img {
     background-image: url("../images/index/leaf2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1000px;
+    height: 100vh;
     width: 100%;
+    display: inline-block;
+    position: relative;
     /* background-color: red; */
 }
 
@@ -83,11 +74,18 @@ img {
     color: white;
 }
 
+.div_2_img_1 {
+    pointer-events: none;
+    position: absolute;
+    width: 100%; 
+    height: 100vh;
+    z-index: -1;
+}
 
 .div_2_img_2 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30%;
-    width: 50%; 
+    width: 40%; 
 }
