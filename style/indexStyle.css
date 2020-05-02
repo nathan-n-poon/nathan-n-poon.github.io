@@ -10,6 +10,13 @@ body {
     overflow-x: hidden;
 }
 
+div {
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
 nav{
     margin:0 auto;
     background-color: #c4c2bc;
@@ -20,17 +27,6 @@ nav{
 
     text-align: center;
     font-size: 300%;
-}
-
-.div_1 {
-    /* background-image: url("../images/index/leaf.jpg"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    /* background-color: red; */
 }
 
 .div_1 img {
@@ -54,16 +50,6 @@ nav{
     font-size: 300%;
     color: white;
     width: 35%;
-}
-
-.div_2 {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    /* background-color: red; */
 }
 
 .div_2 h1 {
@@ -99,4 +85,11 @@ nav{
     margin-left: 40%;
     margin-top: 47vh;
     width: 40vh; 
+}
+
+.div_3 h1{
+    text-align: center;
+    font-size: 450%;
+    padding-top: 4%;
+    color: white;
 }
