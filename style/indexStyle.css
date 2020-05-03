@@ -88,4 +88,10 @@ nav{
 
 .resume img{
     height: 25vh;
+    position: absolute;
+}
+
+.resume p {
+    color: white;
+    position: absolute;
 }
