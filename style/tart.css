@@ -1,0 +1,15 @@
+table {
+    margin-top: 15%;
+    margin-left: 10%;
+    width: 80%;
+    position: absolute;
+}
+
+td {
+    padding-left: 0%;
+    text-align: center;
+}
+
+.tart {
+    width: 20%;
+}
