@@ -24,7 +24,8 @@ nav a{
 nav{
     margin:0 auto;
     background-color: #c4c2bc;
-    height: 8%; 
+    /* height: max(8vh, 70px);  */
+    padding-bottom: 3vh;
     width: 75%;
     border-bottom-right-radius: 10%;
     border-bottom-left-radius: 10%;
@@ -103,3 +104,9 @@ nav{
     font-size: 03vh;
     font-weight: 100;
 }
+/* 
+@media all and (display-mode: fullscreen) {
+    .div1 h1 {
+        color: red;
+    }
+  } */
