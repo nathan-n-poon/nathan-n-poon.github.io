@@ -5,10 +5,10 @@
 .background-image {
   pointer-events: none;
   position: absolute;
-  width: 80%;
-  height: 100%;
-  padding-left: 10%;
+  /* height: 100%; */
   z-index: -1;
+  height: max(100%, 682px);
+      width: max(100%, 955px);
 }
 
 .tooltip {

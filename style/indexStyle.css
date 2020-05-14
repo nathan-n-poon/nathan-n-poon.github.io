@@ -8,6 +8,8 @@ html {
 
 body {
     overflow-x: hidden;
+    height: 100%;
+    position: absolute;
 }
 
 nav a{
@@ -15,7 +17,7 @@ nav a{
 }
 
 .backDiv {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: inline-block;
     position: relative;
@@ -110,3 +112,7 @@ nav{
         color: red;
     }
   } */
+
+  #leaf {
+      
+  }
