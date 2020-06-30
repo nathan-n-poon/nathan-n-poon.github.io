@@ -2,6 +2,10 @@
     overflow: hidden;
 } */
 
+:root {
+    --nav-font-height: 50px;
+}
+
 html {
     height: 100%;
 }
@@ -34,13 +38,14 @@ nav{
 
     
     text-align: center;
-    font-size: 300%;
+    font-size: var(--nav-font-height);
 
     align-self: center;
 }
 
 #div1_text {
-    height:
+    height: calc(100% - var(--nav-font-height) - 2%);
+    width: 100%;
     align-self: center;
     display: flex;
     flex-direction: row; 
@@ -50,12 +55,12 @@ nav{
 } 
 
 #div1 h1 {
-    /* margin-top: -10%; */
+    margin-top: -10%;
     font-size: 125px;
 }
 
 #div1 h2 {
-    
+    font-size: 30px;
 }
 
 .div2 h1 {
