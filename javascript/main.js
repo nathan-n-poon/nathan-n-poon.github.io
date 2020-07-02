@@ -25,17 +25,16 @@ function topFunction() {
 //Author: Manuel Matuzovic
 //css-tricks.com
 
-getDivHeight();
+getsize();
 
-function getDivHeight(divID) {
-  var size = 0
-  for (var node of document.querySelectorAll(divID)) {
-    size += node.getBoundingClientRect().height+"px";
+function getsize() {
+  var size = 0;
+  for (var node of document.querySelectorAll('#div2')) {
+    size  += node.getBoundingClientRect().height;
   }
-  console.log(`size is ${size} px`)
-  document.getElementById("#"+divID).setAttribute("style",`height: max( ${size}px, 100vh)`);
+  document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
 }
 
 window.onresize = function(event) {
-  getDivHeight('div2');
+  getsize();
 };

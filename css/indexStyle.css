@@ -79,6 +79,7 @@ nav{
 #div2 {
     background-color: lightblue;
     height: max(100vh, 500px);
+    justify-content: space-evenly;
 }
 
 #div2 h1 {
