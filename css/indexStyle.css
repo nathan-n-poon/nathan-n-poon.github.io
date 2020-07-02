@@ -33,6 +33,10 @@ body {
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
+#div1_cover {
+    height: max(100vh,500px);
+}
+
 #div1 {
     height: max(100vh,500px);
 }
@@ -78,8 +82,12 @@ nav{
 
 #div2 {
     background-color: lightblue;
-    height: max(100vh, 500px);
+    min-height: 100vh;
     justify-content: space-evenly;
+}
+
+#div2 * {
+    margin-bottom: 1%;
 }
 
 #div2 h1 {

@@ -25,16 +25,19 @@ function topFunction() {
 //Author: Manuel Matuzovic
 //css-tricks.com
 
-getsize();
+// getsize();
 
-function getsize() {
-  var size = 0;
-  for (var node of document.querySelectorAll('#div2')) {
-    size  += node.getBoundingClientRect().height;
-  }
-  document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
-}
+// function getsize() {
+//   var size = 0;
+//   for (var node of document.querySelectorAll('#div2')) {
+//     // size  += node.getBoundingClientRect().height;
+//     size += node.clientHeight
+//   }
+//   size =  size * 1.5
+//   document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
+//   console.log(size);
+// }
 
-window.onresize = function(event) {
-  getsize();
-};
+// window.onresize = function(event) {
+//   getsize();
+// };
