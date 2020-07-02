@@ -4,6 +4,7 @@
 
 :root {
     --nav-font-height: 50px;
+    --div2_img2_height: 300px 
 }
 
 html {
@@ -88,13 +89,14 @@ nav{
 
 #div2 * {
     margin-bottom: 1%;
+    margin-top: 1%;
 }
 
 #div2 h1 {
     max-width: 800px;
     /* flex-grow: 1; */
     font-size: 75px;
-    margin: 0% 7% 7% 0%;
+    margin: 0% 0% 7% 7%;
 }
 
 #div_2_img_1 {
@@ -103,7 +105,9 @@ nav{
 }
 
 #div_2_img_2 {
-    width: 300px;
+    height: var(--div2_img2_height);
+    width: calc(1.3*var(--div2_img2_height));
+    margin: 0 10% 5% 0;
     /* flex-grow: 1; */
 }
 
