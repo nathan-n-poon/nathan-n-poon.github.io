@@ -21,23 +21,29 @@ function topFunction() {
   );
 }
 
+
+
 //https://css-tricks.com/flex-grow-is-weird/
 //Author: Manuel Matuzovic
 //css-tricks.com
 
-// getsize();
+getsize();
 
-// function getsize() {
-//   var size = 0;
-//   for (var node of document.querySelectorAll('#div2')) {
-//     // size  += node.getBoundingClientRect().height;
-//     size += node.clientHeight
-//   }
-//   size =  size * 1.5
-//   document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
-//   console.log(size);
-// }
+function getsize() {
+  var size = 0;
+  // for (var node of document.querySelectorAll('#rectangle')) {
+  //   // size  += node.getBoundingClientRect().height;
+  //   size += node.clientHeight
+  // }
+  // document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
 
-// window.onresize = function(event) {
-//   getsize();
-// };
+  size = 5*document.querySelector("#div_2_h1 h1").offsetWidth;
+  var select=document.querySelector("#div_2_h1 #rectangle");
+  select.setAttribute("style", `width: ${size}px`)
+  console.log(size);
+  console.log(document.querySelector("#div_2_h1 #rectangle").offsetWidth)
+}
+
+window.onresize = function(event) {
+  getsize();
+};
