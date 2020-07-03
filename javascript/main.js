@@ -37,9 +37,10 @@ function getsize() {
   // }
   // document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
 
-  size = 5*document.querySelector("#div_2_h1 h1").offsetWidth;
+  size = 1.00000001*document.querySelector("#div_2_h1 h1").offsetWidth;
   var select=document.querySelector("#div_2_h1 #rectangle");
-  select.setAttribute("style", `width: ${size}px`)
+  select.setAttribute("style", `width: ${500}px`)
+  select.setAttribute("style", `height: ${100}px`)
   console.log(size);
   console.log(document.querySelector("#div_2_h1 #rectangle").offsetWidth)
 }
@@ -47,3 +48,4 @@ function getsize() {
 window.onresize = function(event) {
   getsize();
 };
+ 

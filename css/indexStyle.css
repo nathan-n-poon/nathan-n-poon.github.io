@@ -103,7 +103,7 @@ nav{
     margin-top: 1%;
 }
 
-#div_2_h1 {
+#div_2_h1 h1{
     max-width: 800px;
     /* flex-grow: 1; */
     font-size: 35px;
@@ -112,7 +112,11 @@ nav{
 }
 
 #div_2_h1 #rectangle {
+    z-index: 100;
     background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
 }
 
 
