@@ -109,15 +109,13 @@ nav{
 }
 
 #bike {
-    position: absolute;
-    z-index: 0;
+    position: relative;
 }
 
 #corner {
-    /* position: absolute; */
+    position: absolute;
     padding-left: calc(var(--div2_img_height)/2);
     margin-top: calc(-0.95/3*var(--div2_img_height));
-    z-index: 0;
 }
 
 #div_2_img_2 {
