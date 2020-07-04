@@ -30,22 +30,30 @@ function topFunction() {
 getsize();
 
 function getsize() {
-  var size = 0;
+  var width = 0;
+  var height = 0;
   // for (var node of document.querySelectorAll('#rectangle')) {
   //   // size  += node.getBoundingClientRect().height;
   //   size += node.clientHeight
   // }
   // document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
 
-  size = 1.00000001*document.querySelector("#div_2_h1 h1").offsetWidth;
+  width = 1*document.querySelector("#div_2_h1 h1").offsetWidth;
+  height = 1*document.querySelector("#div_2_h1 h1").offsetHeight;
   var select=document.querySelector("#div_2_h1 #rectangle");
-  select.setAttribute("style", `width: ${500}px`)
-  select.setAttribute("style", `height: ${100}px`)
-  console.log(size);
-  console.log(document.querySelector("#div_2_h1 #rectangle").offsetWidth)
+  select.setAttribute("style", `width: ${width}px; height: ${height}px`)
+  // console.log(`nominal width: ${width}`);
+  // console.log(`nominal height: ${height}`)
+  // console.log(`actual width: ${document.querySelector("#div_2_h1 #rectangle").offsetWidth}`);
+  // console.log(`actual height: ${document.querySelector("#div_2_h1 #rectangle").offsetHeight}`);
 }
 
 window.onresize = function(event) {
   getsize();
 };
- 
+
+var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+  document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+
+setInterval(function () {console.log(window.scrollY)}, 2000);
+setInterval(function () {console.log(window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight))}, 3000);
