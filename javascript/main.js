@@ -66,11 +66,12 @@ console.log((window.scrollMaxY || (document.documentElement.scrollHeight - docum
 const min = 1;
 const max = 2;
 const displacement = document.querySelector("#rectangle");
+var divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / numberOfDivs;
+var minOffset = min * divHeight;
+var maxOffset = max * divHeight;
 
 function castShadow() {
-  var divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / numberOfDivs;
-  var minOffset = min * divHeight;
-  var maxOffset = max * divHeight;
+
   var scrollPos = window.scrollY;
 
   var percentOffset = (scrollPos - minOffset) / (maxOffset - minOffset);
@@ -78,7 +79,7 @@ function castShadow() {
   percentOffset = Math.max(0, percentOffset);
   percentOffset = Math.min(100, percentOffset);
 
-  displacement.style.marginTop = `${(-8 + percentOffset * 4)}%` ;
+  displacement.style.marginTop = `${(-8 + percentOffset * 2)}%` ;
   console.log(-12 + percentOffset * 12);
 }
 
