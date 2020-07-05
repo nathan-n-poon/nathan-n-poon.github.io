@@ -78,11 +78,15 @@ function castShadow() {
   percentOffset = Math.max(0, percentOffset);
   percentOffset = Math.min(100, percentOffset);
 
-  displacement.style.marginTop = `${(-12 + percentOffset * 4)}%` ;
+  displacement.style.marginTop = `${(-8 + percentOffset * 4)}%` ;
   console.log(-12 + percentOffset * 12);
 }
 
 window.onscroll = function(event) {
+  castShadow();
+};
+
+window.onresize = function(event) {
   castShadow();
 };
 
