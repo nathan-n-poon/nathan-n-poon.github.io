@@ -21,11 +21,11 @@ copySize("#div2_header h1", "#div2_header #rectangle");
 //invocations
 window.onscroll = function() {
   scrollFunction()
-  castShadow();
+  castShadow("div2_header", "div2_img_1");
 };
 window.onresize = function(event) {
   copySize("div2_header");
-  castShadow();
+  castShadow("div2_header", "div2_img_1");
 };
 
 
@@ -73,7 +73,7 @@ function detectWrap(item1, item2) {
 
 }
 
-function castShadow() {
+function castShadow(wrapper1, wrapper2) {
 
   var scrollPos = window.scrollY;
 
@@ -84,7 +84,7 @@ function castShadow() {
 
   displacement.style.marginTop = `${(-1.5*height + percentOffset * height/1.5)}px` ;
 
-  if(detectWrap("div2_header", "div2_img_1")) 
+  if(detectWrap(wrapper1, wrapper2)) 
   {
     displacement.style.marginLeft = '4%';
   }
