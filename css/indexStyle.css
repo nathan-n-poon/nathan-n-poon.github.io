@@ -93,7 +93,7 @@ nav{
     background-color: #f7ecc1;
     min-height: 100vh;
     justify-content: space-evenly;
-    border-style: dashed;
+    border-style: groove;
     border-color: black;
     border-radius: 25px;
     border-width: 10px;
