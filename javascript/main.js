@@ -27,11 +27,13 @@ function topFunction() {
 //Author: Manuel Matuzovic
 //css-tricks.com
 
+var width = 0;
+var height = 0;
+
 getsize();
 
 function getsize() {
-  var width = 0;
-  var height = 0;
+
   // for (var node of document.querySelectorAll('#rectangle')) {
   //   // size  += node.getBoundingClientRect().height;
   //   size += node.clientHeight
@@ -45,7 +47,7 @@ function getsize() {
   select.style.height = `${height}px`;
   
   // ("style", `width: ${width}px; height: ${height}px`)
-  console.log("YEAH");
+  // console.log("YEAH");
   // console.log(`nominal width: ${width}`);
   // console.log(`nominal height: ${height}`)
   // console.log(`actual width: ${document.querySelector("#div_2_h1 #rectangle").offsetWidth}`);
@@ -54,7 +56,13 @@ function getsize() {
 
 window.onresize = function(event) {
   getsize();
+  detectWrap();
+  castShadow();
 };
+
+function detectWrap() {
+
+}
 
 // var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
 //   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
@@ -62,7 +70,7 @@ window.onresize = function(event) {
 
 var numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
 
-console.log((window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)));
+// console.log((window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)));
 const min = 1;
 const max = 2;
 const displacement = document.querySelector("#rectangle");
@@ -79,15 +87,11 @@ function castShadow() {
   percentOffset = Math.max(0, percentOffset);
   percentOffset = Math.min(100, percentOffset);
 
-  displacement.style.marginTop = `${(-8 + percentOffset * 2)}%` ;
-  console.log(-12 + percentOffset * 12);
+  displacement.style.marginTop = `${(-1.5*height + percentOffset * height/1.5)}px` ;
+  // console.log(-12 + percentOffset * 12);
 }
 
 window.onscroll = function(event) {
-  castShadow();
-};
-
-window.onresize = function(event) {
   castShadow();
 };
 
