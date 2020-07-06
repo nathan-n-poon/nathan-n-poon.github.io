@@ -1,8 +1,36 @@
+// var declaration
+//for scrollFunction()
 mybutton = document.getElementById("myBtn");
+// for castShadow()
+var numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
+const min = 1;
+const max = 2;
+const displacement = document.querySelector("#rectangle");
+var divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / numberOfDivs;
+var minOffset = min * divHeight;
+var maxOffset = max * divHeight;
+//for copySize()
+var width = 0;
+var height = 0;
 
+
+//functions on setup
+copySize("#div2_header h1", "#div2_header #rectangle");
+
+
+//invocations
+window.onscroll = function() {
+  scrollFunction()
+  castShadow();
+};
+window.onresize = function(event) {
+  copySize("div2_header");
+  castShadow();
+};
+
+
+//function declarations
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -14,82 +42,36 @@ function scrollFunction() {
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   window.scrollTo(
-      {
-          top: 0,
-          behavior: "smooth"
-      }
+    {
+      top: 0,
+      behavior: "smooth"
+    }
   );
 }
 
-
-
-//https://css-tricks.com/flex-grow-is-weird/
-//Author: Manuel Matuzovic
-//css-tricks.com
-
-var width = 0;
-var height = 0;
-
-getsize();
-
-function getsize() {
-
-  // for (var node of document.querySelectorAll('#rectangle')) {
-  //   // size  += node.getBoundingClientRect().height;
-  //   size += node.clientHeight
-  // }
-  // document.getElementById('div2').setAttribute("style" , `height: max( ${size}px), 100vh`)
-
-  width = 1*document.querySelector("#div_2_h1 h1").offsetWidth;
-  height = 1*document.querySelector("#div_2_h1 h1").offsetHeight;
-  var select=document.querySelector("#div_2_h1 #rectangle");
+//gets size of jango and copies dimensions over to boba
+function copySize(jango, boba) {
+  width = 1*document.querySelector(jango).offsetWidth;
+  height = 1*document.querySelector(jango).offsetHeight;
+  var select=document.querySelector(boba);
   select.style.width = `${width}px`;
   select.style.height = `${height}px`;
-  
-  // ("style", `width: ${width}px; height: ${height}px`)
-  // console.log("YEAH");
-  // console.log(`nominal width: ${width}`);
-  // console.log(`nominal height: ${height}`)
-  // console.log(`actual width: ${document.querySelector("#div_2_h1 #rectangle").offsetWidth}`);
-  // console.log(`actual height: ${document.querySelector("#div_2_h1 #rectangle").offsetHeight}`);
 }
 
-window.onresize = function(event) {
-  getsize();
-  detectWrap();
-  castShadow();
-};
-
-detectWrap();
-
-function detectWrap() {
-  var h1Centre = document.getElementById("div_2_h1").offsetTop + document.getElementById("div_2_h1").offsetHeight / 2;
-  var imgCentre = document.getElementById("div_2_img_1").offsetTop + document.getElementById("div_2_img_1").offsetHeight / 2;
+//detects
+function detectWrap(item1, item2) {
+  var h1Centre = document.getElementById(item1).offsetTop + document.getElementById(item1).offsetHeight / 2;
+  var imgCentre = document.getElementById(item2).offsetTop + document.getElementById(item2).offsetHeight / 2;
   if (h1Centre/imgCentre > 1.1 || h1Centre/imgCentre < 0.9)
   {
-    console.log("pootis");
-    document.getElementById("rectangle").style.marginLeft = '4%';
+    return true;
   }
   else 
   {
-    document.getElementById("rectangle").style.marginLeft = '-2%';    
+    return false;
   }
 
 }
-
-// var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
-//   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-
-
-var numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
-
-// console.log((window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)));
-const min = 1;
-const max = 2;
-const displacement = document.querySelector("#rectangle");
-var divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / numberOfDivs;
-var minOffset = min * divHeight;
-var maxOffset = max * divHeight;
 
 function castShadow() {
 
@@ -101,14 +83,12 @@ function castShadow() {
   percentOffset = Math.min(100, percentOffset);
 
   displacement.style.marginTop = `${(-1.5*height + percentOffset * height/1.5)}px` ;
-  // console.log(-12 + percentOffset * 12);
+
+  if(detectWrap("div2_header", "div2_img_1")) 
+  {
+    displacement.style.marginLeft = '4%';
+  }
+  else {
+    displacement.style.marginLeft = '-2%';
+  }
 }
-
-window.onscroll = function(event) {
-  castShadow();
-};
-
-
-
-// setInterval(function () {console.log(window.scrollY)}, 2000);
-// setInterval(function () {console.log(window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight))}, 3000);

@@ -104,11 +104,11 @@ nav{
     margin-top: 1%;
 }
 
-#div_2_h1 {
+#div2_header {
     padding-top: 4%;
 }
 
-#div_2_h1 h1{
+#div2_header h1{
     position: relative;
     z-index: 2;
     max-width: 800px;
@@ -118,7 +118,7 @@ nav{
     background-color: lightgrey;
 }
 
-#div_2_h1 #rectangle {
+#div2_header #rectangle {
     z-index: 1;
     background-color: red;
     width: 500px;
@@ -129,44 +129,44 @@ nav{
 }
 
 
-#div_2_img_1 {
+#div2_img_1 {
     padding-top: 15%;
     padding-left: -10%;
 }
 
-#div_2_img_1 img {
+#div2_img_1 img {
     width: var(--div2_img_height);
     /* flex-grow: 1; */
 }
 
-#div_2_img_1 #bike {
+#div2_img_1 #bike {
     padding-top: 2%;
     position: relative;
 }
 
-#div_2_img_1 #corner {
+#div2_img_1 #corner {
     position: absolute;
     padding-left: calc(var(--div2_img_height)/2);
     margin-top: calc(-0.95/3*var(--div2_img_height));
 }
 
-#div_2_img_2 {
+#div2_img_2 {
     padding-right: 5%;
 }
 
-#div_2_img_2 img{
+#div2_img_2 img{
     height: var(--div2_img_height);
     width: calc(1.3*var(--div2_img_height));
     margin: 0 10% 5% 0;
     /* flex-grow: 1; */
 }
 
-#div_2_img_2 #silhouette {
+#div2_img_2 #silhouette {
     z-index: 1;
     position: relative;
 }
 
-#div_2_img_2 #corner {
+#div2_img_2 #corner {
     position: absolute;
     margin-left: calc(var(--div2_img_height)*1.1/-4);
     margin-top: calc(var(--div2_img_height)/16*1.8);
@@ -174,7 +174,7 @@ nav{
     margin-bottom: 0px;
 }
 
-#div_2_h2 {
+#div2_text {
     padding-top: 2%;
     width: 350px;
     /* flex-grow: 1; */
