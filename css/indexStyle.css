@@ -19,6 +19,7 @@ body {
     position: absolute;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    min-width: 450px;
 }
 
 body::-webkit-scrollbar {

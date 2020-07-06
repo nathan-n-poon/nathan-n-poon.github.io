@@ -60,7 +60,20 @@ window.onresize = function(event) {
   castShadow();
 };
 
+detectWrap();
+
 function detectWrap() {
+  var h1Centre = document.getElementById("div_2_h1").offsetTop + document.getElementById("div_2_h1").offsetHeight / 2;
+  var imgCentre = document.getElementById("div_2_img_1").offsetTop + document.getElementById("div_2_img_1").offsetHeight / 2;
+  if (h1Centre/imgCentre > 1.1 || h1Centre/imgCentre < 0.9)
+  {
+    console.log("pootis");
+    document.getElementById("rectangle").style.marginLeft = '4%';
+  }
+  else 
+  {
+    document.getElementById("rectangle").style.marginLeft = '-2%';    
+  }
 
 }
 
