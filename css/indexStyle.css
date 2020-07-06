@@ -90,7 +90,7 @@ nav{
 /* -------------------------------------------------------------------------------------------------------- */
 
 #div2 {
-    background-color: lightblue;
+    background-color: #f7ecc1;
     min-height: 100vh;
     justify-content: space-evenly;
     border-style: dashed;
@@ -115,7 +115,7 @@ nav{
     /* flex-grow: 1; */
     font-size: 35px;
     margin: 0% 0% 7% 7%;
-    background-color: antiquewhite;
+    background-color: lightgrey;
 }
 
 #div_2_h1 #rectangle {
