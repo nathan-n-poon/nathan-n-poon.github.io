@@ -82,7 +82,7 @@ function castShadow(wrapper1, wrapper2) {
   percentOffset = Math.max(0, percentOffset);
   percentOffset = Math.min(100, percentOffset);
 
-  displacement.style.marginTop = `${(-1.5*height + percentOffset * height/1.5)}px` ;
+  displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/1.5)}px` ;
 
   if(detectWrap(wrapper1, wrapper2)) 
   {
