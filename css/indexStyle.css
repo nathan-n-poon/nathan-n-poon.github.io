@@ -41,6 +41,10 @@ body::-webkit-scrollbar {
     flex-direction: column;
 }
 
+* img {
+    border-radius: 20px;
+}
+
 /* -------------------------------------------------------------------------------------------------------- */
 #div1_cover {
     height: max(100vh,500px);
