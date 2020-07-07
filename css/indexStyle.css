@@ -95,7 +95,7 @@ nav{
     justify-content: space-evenly;
     border-style: groove;
     border-color: black;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     border-width: 10px;
 }
 
@@ -139,7 +139,7 @@ nav{
     /* flex-grow: 1; */
 }
 
-#div2_img_1 #bike {
+#div2_img_1 #emanation {
     padding-top: 2%;
     position: relative;
 }
