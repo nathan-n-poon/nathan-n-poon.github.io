@@ -2,13 +2,6 @@
 //for scrollFunction()
 
 // for castShadow()
-var numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
-const min = 1;
-const max = 2;
-const displacement = document.querySelector("#rectangle");
-var divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / numberOfDivs;
-var minOffset = min * divHeight;
-var maxOffset = max * divHeight;
 //for copySize()
 var width = 0;
 var height = 0;
@@ -44,19 +37,61 @@ class Button {
 }
 
 class Shadow {
+  constructor(shadow, dimensions) {
+    this.displacement = document.querySelector(shadow);
+    this.dimensions = dimensions;
+  }
+
+  castShadow(wrapper1, wrapper2) {
+
+    var scrollPos = window.scrollY;
+  
+    var percentOffset = (scrollPos - this.dimensions.minOffset) / (this.dimensions.maxOffset - this.dimensions.minOffset);
+  
+    percentOffset = Math.max(0, percentOffset);
+    percentOffset = Math.min(100, percentOffset);
+  
+    this.displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/1.5)}px` ;
+  
+    if(detectWrap(wrapper1, wrapper2)) 
+    {
+      this.displacement.style.marginLeft = '4%';
+    }
+    else {
+      this.displacement.style.marginLeft = '-2%';
+    }
+  }
   
 }
 
+class DivDimensions {
+  constructor(min, max) {
+    this.numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
+    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
+    this.min = min;
+    this.max = max;
+  }
+  get minOffset() {
+    return this.min * this.divHeight;
+  }
+  get maxOffset() {
+    return this.max * this.divHeight;
+  }
+}
+
 const button = new Button(); 
+const divTwoDimensions = new DivDimensions(1,2);
+const shadowfax = new Shadow("#rectangle", divTwoDimensions);
 
 //invocations
 window.onscroll = function() {
   button.scrollFunction();
-  castShadow("div2_header", "div2_img_1");
+  shadowfax.castShadow("div2_header", "div2_img_1");
+  // shadowFax.castShadow("div2_header", "div2_img_1");
 };
 window.onresize = function(event) {
   copySize("#div2_header h1", "#div2_header #rectangle");
-  castShadow("div2_header", "div2_img_1");
+  shadowfax.castShadow("div2_header", "div2_img_1");
 };
 
 
@@ -85,27 +120,6 @@ function detectWrap(item1, item2) {
   }
 
 }
-
-function castShadow(wrapper1, wrapper2) {
-
-  var scrollPos = window.scrollY;
-
-  var percentOffset = (scrollPos - minOffset) / (maxOffset - minOffset);
-
-  percentOffset = Math.max(0, percentOffset);
-  percentOffset = Math.min(100, percentOffset);
-
-  displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/1.5)}px` ;
-
-  if(detectWrap(wrapper1, wrapper2)) 
-  {
-    displacement.style.marginLeft = '4%';
-  }
-  else {
-    displacement.style.marginLeft = '-2%';
-  }
-}
-
 
 function doge() {}
 
