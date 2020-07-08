@@ -195,7 +195,16 @@ nav{
 }
 
 #div3_text {
-    width: 350px;
+    width: 500px;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+#div3_text h1{
+    width: 500px;
+    align-self: center;
+    text-align: center;
 }
 
 #div3_img_1 img {
