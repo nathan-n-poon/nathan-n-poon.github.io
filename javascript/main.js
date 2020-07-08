@@ -1,15 +1,10 @@
-// var declaration
-//for scrollFunction()
-
-// for castShadow()
-//for copySize()
-var width = 0;
-var height = 0;
+// import * as indexClasses from 'indexClasses.js'
 
 
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
 
+//class definitions
 class Button {
 
   constructor() {
@@ -66,7 +61,7 @@ class Shadow {
     percentOffset = Math.max(0, percentOffset);
     percentOffset = Math.min(100, percentOffset);
   
-    this.displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/1.5)}px` ;
+    this.displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/0.8)}px` ;
   
     if(detectWrap(wrapper1, wrapper2)) 
     {
@@ -79,6 +74,9 @@ class Shadow {
   
 }
 
+class doge {}
+
+//instantiations
 const button = new Button(); 
 const divTwoDimensions = new DivDimensions(1,2);
 const shadowfax = new Shadow("#rectangle", divTwoDimensions);
@@ -93,9 +91,7 @@ window.onresize = function(event) {
   shadowfax.castShadow("div2_header", "div2_img_1");
 };
 
-
-
-
+//helper functions
 //gets size of jango and copies dimensions over to boba
 function copySize(jango, boba) {
   width = 1*document.querySelector(jango).offsetWidth;
@@ -119,9 +115,6 @@ function detectWrap(item1, item2) {
   }
 
 }
-
-function doge() {}
-
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
