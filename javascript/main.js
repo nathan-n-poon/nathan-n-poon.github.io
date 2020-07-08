@@ -24,7 +24,7 @@ window.onscroll = function() {
   castShadow("div2_header", "div2_img_1");
 };
 window.onresize = function(event) {
-  copySize("div2_header");
+  copySize("#div2_header h1", "#div2_header #rectangle");
   castShadow("div2_header", "div2_img_1");
 };
 
