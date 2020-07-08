@@ -36,6 +36,21 @@ class Button {
   }
 }
 
+class DivDimensions {
+  constructor(min, max) {
+    this.numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
+    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
+    this.min = min;
+    this.max = max;
+  }
+  get minOffset() {
+    return this.min * this.divHeight;
+  }
+  get maxOffset() {
+    return this.max * this.divHeight;
+  }
+}
+
 class Shadow {
   constructor(shadow, dimensions) {
     this.displacement = document.querySelector(shadow);
@@ -64,21 +79,6 @@ class Shadow {
   
 }
 
-class DivDimensions {
-  constructor(min, max) {
-    this.numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
-    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
-    this.min = min;
-    this.max = max;
-  }
-  get minOffset() {
-    return this.min * this.divHeight;
-  }
-  get maxOffset() {
-    return this.max * this.divHeight;
-  }
-}
-
 const button = new Button(); 
 const divTwoDimensions = new DivDimensions(1,2);
 const shadowfax = new Shadow("#rectangle", divTwoDimensions);
@@ -87,7 +87,6 @@ const shadowfax = new Shadow("#rectangle", divTwoDimensions);
 window.onscroll = function() {
   button.scrollFunction();
   shadowfax.castShadow("div2_header", "div2_img_1");
-  // shadowFax.castShadow("div2_header", "div2_img_1");
 };
 window.onresize = function(event) {
   copySize("#div2_header h1", "#div2_header #rectangle");
