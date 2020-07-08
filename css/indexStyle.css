@@ -20,6 +20,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     min-width: 450px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 body::-webkit-scrollbar {
@@ -82,11 +83,11 @@ nav{
 
 #div1 h1 {
     margin-bottom: 10%;
-    font-size: 125px;
+    font-size: 110px;
 }
 
 #div1 h2 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -224,8 +225,8 @@ nav{
 
 
   #myBtn {
-      height: 5vw;
-      width: 5vw;
+      height: 75px;
+      width: 75px;
     background-image: url("../images/index/top.png");
     size: 100%;
     display: none; /* Hidden by default */

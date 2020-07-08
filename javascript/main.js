@@ -1,6 +1,6 @@
 // var declaration
 //for scrollFunction()
-mybutton = document.getElementById("myBtn");
+
 // for castShadow()
 var numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
 const min = 1;
@@ -17,10 +17,41 @@ var height = 0;
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
 
+class Button {
+
+  constructor() {
+    this.mybutton = document.getElementById("myBtn");
+  }
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      this.mybutton.style.display = "block";
+    } else {
+      this.mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  topFunction() {
+    window.scrollTo(
+      {
+        top: 0,
+        behavior: "smooth"
+      }
+    );
+  }
+}
+
+class Shadow {
+  
+}
+
+const button = new Button(); 
 
 //invocations
 window.onscroll = function() {
-  scrollFunction()
+  button.scrollFunction();
   castShadow("div2_header", "div2_img_1");
 };
 window.onresize = function(event) {
@@ -29,25 +60,7 @@ window.onresize = function(event) {
 };
 
 
-//function declarations
-// When the user scrolls down 20px from the top of the document, show the button
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  window.scrollTo(
-    {
-      top: 0,
-      behavior: "smooth"
-    }
-  );
-}
 
 //gets size of jango and copies dimensions over to boba
 function copySize(jango, boba) {
@@ -92,3 +105,10 @@ function castShadow(wrapper1, wrapper2) {
     displacement.style.marginLeft = '-2%';
   }
 }
+
+
+function doge() {}
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
