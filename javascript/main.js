@@ -14,6 +14,12 @@ if(window.mobileCheck()) {
   }
   alert("you are on mobile!");
 }
+else {
+  var all = document.getElementsByClassName('vertical_flex');
+  for (var i = 0; i < all.length; i++) {
+    all[i].style.minHeight = '100vh';
+  }
+}
 changeBackground();
 
 //class definitions
