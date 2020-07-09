@@ -76,6 +76,7 @@ nav{
 }
 
 #div1_text {
+    text-align: center;
     align-self: center;
     height: calc(100vh - var(--nav-font-height) - 2%);
     margin-top: calc(var(--nav-font-height) + 3%);
