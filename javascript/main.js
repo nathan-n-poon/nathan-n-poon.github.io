@@ -12,7 +12,13 @@ if(window.mobileCheck()) {
   for (var i = 0; i < all.length; i++) {
     all[i].style.height = '1000px';
   }
-  alert("you are on mobile!");
+  // alert("you are on mobile!");
+}
+else {
+  var all = document.getElementsByClassName('vertical_flex');
+  for (var i = 0; i < all.length; i++) {
+    all[i].style.minHeight = '100vh';
+  }
 }
 changeBackground();
 
