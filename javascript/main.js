@@ -36,14 +36,15 @@ class Button {
 class DivDimensions {
   constructor(min, max) {
     this.numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
-    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
     this.min = min;
     this.max = max;
   }
   get minOffset() {
+    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
     return this.min * this.divHeight;
   }
   get maxOffset() {
+    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
     return this.max * this.divHeight;
   }
 }
