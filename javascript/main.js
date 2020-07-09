@@ -14,6 +14,7 @@ if(window.mobileCheck()) {
   }
   alert("you are on mobile!");
 }
+changeBackground();
 
 //class definitions
 
