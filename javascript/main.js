@@ -11,7 +11,7 @@ copySize("#div2_header h1", "#div2_header #rectangle");
 var all = document.getElementsByClassName('vertical_flex');
 if(window.mobileCheck()) {
   for (var i = 0; i < all.length; i++) {
-    all[i].style.height = '1000px';
+    all[i].style.height = '1500px';
   }
   // alert("you are on mobile!");
 }
