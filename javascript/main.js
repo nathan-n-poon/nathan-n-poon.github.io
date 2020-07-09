@@ -58,17 +58,20 @@ class Shadow {
   
     var percentOffset = (scrollPos - this.dimensions.minOffset) / (this.dimensions.maxOffset - this.dimensions.minOffset);
   
-    percentOffset = Math.max(0, percentOffset);
-    percentOffset = Math.min(100, percentOffset);
-  
-    this.displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/0.8)}px` ;
-  
-    if(detectWrap(wrapper1, wrapper2)) 
+    if(percentOffset >= 0 || percentOffset <= 1)
     {
-      this.displacement.style.marginLeft = '4%';
-    }
-    else {
-      this.displacement.style.marginLeft = '-2%';
+      percentOffset = Math.max(0, percentOffset);
+      percentOffset = Math.min(1, percentOffset);
+    
+      this.displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/0.8)}px` ;
+    
+      if(detectWrap(wrapper1, wrapper2)) 
+      {
+        this.displacement.style.marginLeft = '4%';
+      }
+      else {
+        this.displacement.style.marginLeft = '-2%';
+      }
     }
   }
   
