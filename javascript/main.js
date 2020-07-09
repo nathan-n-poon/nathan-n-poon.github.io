@@ -8,7 +8,7 @@ window.mobileCheck = function() {
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
 if(window.mobileCheck()) {
-  var all = document.getElementsByClassName('someClass');
+  var all = document.getElementsByClassName('vertical_flex');
   for (var i = 0; i < all.length; i++) {
     all[i].style.height = '1000px';
   }
@@ -131,9 +131,16 @@ function changeBackground() {
   if(vw(100) <= 500 || window.mobileCheck()) {
     poot = document.getElementById("div1_cover");
     poot.src = "images/index/trees.jpg";
-    poot.setAttribute('style', 'width: 500px');
     spencer = document.getElementById("div1_text");
     spencer.setAttribute('style', 'color: white');
+    if(!window.mobileCheck)
+    {
+      poot.setAttribute('style', 'width: 500px');
+    }
+    if(window.mobileCheck) 
+    {
+      poot.setAttribute('style', 'width: 100vw');
+    }
     // poot.src = "images/index/moon.jpg";
     // poot.min-width = "450px";
   }
