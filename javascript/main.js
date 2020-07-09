@@ -109,6 +109,30 @@ function detectWrap(item1, item2) {
 
 }
 
+function vw(v) {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  return (v * w) / 100;
+}
+
+function changeBackground() {
+  if(vw(100) <= 500) {
+    poot = document.getElementById("div1_cover");
+    poot.src = "images/index/trees.jpg";
+    poot.setAttribute('style', 'width: 500px');
+    spencer = document.getElementById("div1_text");
+    spencer.setAttribute('style', 'color: white');
+    // poot.src = "images/index/moon.jpg";
+    // poot.min-width = "450px";
+  }
+  else {
+    poot = document.getElementById("div1_cover");
+    poot.src = "images/index/clouds.jpg";
+    poot.setAttribute('style', 'height: max(100vh,500px); border-radius: 0px; pointer-events: none; position: absolute; z-index: -1; width: max(100vw, 955px);');
+    spencer = document.getElementById("div1_text");
+    spencer.setAttribute('style', 'color: black');
+  }
+}
+
 //instantiations
 const button = new Button("myBtn"); 
 const divTwoDimensions = new DivDimensions(1,2);
@@ -122,6 +146,7 @@ window.onscroll = function() {
 window.onresize = function(event) {
   copySize("#div2_header h1", "#div2_header #rectangle");
   shadowfax.castShadow("div2_header", "div2_img_1");
+  changeBackground();
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
