@@ -224,6 +224,11 @@ nav{
 
 #div4 {
     height: 100vh;
+    justify-content: space-evenly;
+}
+
+#div4 img {
+    width: 300px;
 }
 
 
