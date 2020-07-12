@@ -274,3 +274,77 @@ nav{
     background-color: grey; /* Add a dark-grey background on hover */
   }
 
+#slideshow_wrapper * {
+    box-sizing: border-box;
+}
+
+#slideshow {
+    transform-style: preserve-3d;
+}
+
+.my_slides {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    transition: transform .5s, opacity .5s, z-index .5s;
+    /* opacity: 0;
+  position: absolute;
+  top:0;
+  width: 100%;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  transition: transform .5s, opacity .5s, z-index .5s; */
+}
+
+.my_slides.initial,
+.my_slides.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+
+.my_slides.previous,
+.my_slides.next {
+  z-index: 800;
+}
+.my_slides.previous {
+  transform: translateX(-100%); /* Move 'prev' item to the left */
+}
+.my_slides.next {
+  transform: translateX(100%); /* Move 'next' item to the right */
+}
+
+#slideshow_button--previous,
+#slideshow_button--next {
+  position: absolute;
+  top:50%;
+  width: 3rem;
+  height: 3rem;
+  transform: translateY(-50%);
+  cursor: pointer; 
+  z-index: 1001; /* Sit on top of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: antiquewhite;
+}
+#slideshow_button--previous {
+  left:2.5%;
+}
+#slideshow_button--next {
+  right:2.5%;
+}
+#slideshow_button--previous::after,
+#slideshow_button--next::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#sldeshow_button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
