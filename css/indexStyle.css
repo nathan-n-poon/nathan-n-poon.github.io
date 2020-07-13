@@ -27,6 +27,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+/* holds items in a row unless wrapping */
 .horizontal_flex {
     width: 100%;
     display: flex;
@@ -36,6 +37,8 @@ body::-webkit-scrollbar {
 	align-items: center;
 }
 
+
+/* holds horizontal divs in a vertical fashion */
 .vertical_flex {
     /* width: 100%; */
     display: flex;
@@ -49,7 +52,6 @@ body::-webkit-scrollbar {
 /* -------------------------------------------------------------------------------------------------------- */
 #div1_cover {
     height: max(100vh,500px);
-    border-radius: 0px;
 }
 
 #div1 {
@@ -64,7 +66,6 @@ nav{
     background-color: #c4c2bc;
 
     width: max(45%, 300px);
-    /* margin:0 27.5%; */
     padding-top: 1%;
     padding-bottom: 1%;
 
@@ -98,7 +99,6 @@ nav{
 
 #div2 {
     background-color: #f7ecc1;
-    /* min-height: 100vh; */
     justify-content: space-evenly;
     
     border-style: groove;
@@ -107,7 +107,6 @@ nav{
 }
 
 #div2 * {
-    /* margin-bottom: 1%; */
     margin-top: 1%;
 }
 
@@ -119,7 +118,6 @@ nav{
     position: relative;
     z-index: 2;
     max-width: 800px;
-    /* flex-grow: 1; */
     font-size: 35px;
     margin: 0% 0% 7% 7%;
     background-color: lightgrey;
@@ -143,7 +141,6 @@ nav{
 
 #div2_img_1 img {
     width: var(--default_img_height);
-    /* flex-grow: 1; */
 }
 
 #div2_img_1 #emanation {
@@ -184,7 +181,6 @@ nav{
 #div2_text {
     padding-top: 2%;
     width: 350px;
-    /* flex-grow: 1; */
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -193,7 +189,6 @@ nav{
 
 #div3 {
     background-color: #93b3d9;
-    /* min-height: 100vh; */
     justify-content: space-evenly;
 }
 
