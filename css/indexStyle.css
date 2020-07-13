@@ -8,12 +8,10 @@
 }
 
 html {
-    height: 100%;
+    background-color: black;
 }
 
 body {
-    background-color: yellow;
-
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100%;
@@ -276,8 +274,8 @@ nav{
     background-color: grey; /* Add a dark-grey background on hover */
   }
 
-#slideshow_wrapper * {
-    /* box-sizing: border-box; */
+.slideshow_wrapper *{
+    box-sizing: border-box;
 }
 
 #slideshow {

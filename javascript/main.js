@@ -8,7 +8,7 @@ window.mobileCheck = function() {
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
 
-var all = document.getElementsByClassName('vertical_flex');
+var all = document.querySelectorAll('.vertical_flex , .slideshow_wrapper')
 if(window.mobileCheck()) {
   for (var i = 0; i < all.length; i++) {
     all[i].style.height = '1000px';
@@ -16,6 +16,7 @@ if(window.mobileCheck()) {
   // alert("you are on mobile!");
 }
 else {
+  console.log(all)
   for (var i = 0; i < all.length; i++) {
     all[i].style.minHeight = '100vh';
   }
