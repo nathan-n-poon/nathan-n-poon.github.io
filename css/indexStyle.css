@@ -275,7 +275,7 @@ nav{
   }
 
 #slideshow_wrapper * {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 #slideshow {
