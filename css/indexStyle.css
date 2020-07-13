@@ -12,6 +12,8 @@ html {
 }
 
 body {
+    background-color: yellow;
+
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100%;
