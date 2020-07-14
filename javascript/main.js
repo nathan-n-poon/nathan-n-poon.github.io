@@ -55,7 +55,7 @@ class Button {
 //returns the top and bottom coordinates for a vertical (main) div
 class DivDimensions {
   constructor(min, max) {
-    this.numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
+    this.numberOfDivs = document.querySelectorAll("body .main").length;
     this.min = min;
     this.max = max;
   }
@@ -228,40 +228,22 @@ window.onresize = function(event) {
     }
   }
 
-  // Next navigation handler
   function moveNext() {
-
-    // Check if moving
     if (!moving) {
-
       slide++;
-      // Move carousel to updated slide
       moveCarouselTo(slide);
     }
   }
 
-  // Previous navigation handler
   function movePrev() {
-
-    // Check if moving
     if (!moving) {
-
       slide--;
-      // Move carousel to updated slide
       moveCarouselTo(slide);
     }
   }
 
-  // Initialise carousel
-  function initCarousel() {
-    setEventListeners();
-
-    // Set moving to false now that the carousel is ready
-    moving = false;
-  }
-
-  // make it rain
-  initCarousel();
+  setEventListeners();
+  moving = false;
   moveCarouselTo(0);
 
 }(document));

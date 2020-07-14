@@ -285,13 +285,14 @@ nav{
 }
 
 .my_slides {
-    /* transition: transform 300.5s, opacity 300.5s, z-index 300.5s; */
 }
+
 .inactive_slide {
     /* opacity: 0; */
     position: absolute;
     top: 0;
     z-index: 100;
+    transition: transform .5s, opacity .5s, z-index .5s;
     /* opacity: 0;
   position: absolute;
   top:0;
@@ -305,6 +306,7 @@ nav{
     height: 0px;
     opacity: 0;
     z-index: -999;
+    transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 .my_slides.initial,
@@ -314,15 +316,15 @@ nav{
   z-index: 900;
 }
 
-/* .my_slides.previous,
-.my_slides.next {
-  z-index: 800;
-} */
 .my_slides.previous {
+  z-index: 800;
   transform: translateX(-100%); /* Move 'prev' item to the left */
+  transition: transform .5s, opacity .5s, z-index .5s;
 }
 .my_slides.next {
+  z-index: 800;
   transform: translateX(100%); /* Move 'next' item to the right */
+  transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 #slideshow_button--previous,
