@@ -8,10 +8,15 @@
 }
 
 html {
-    background-color: black;
+    background-color: yellow;
+
 }
 
 body {
+    background-color: black;
+
+    z-index: 0;
+
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100%;
@@ -300,10 +305,10 @@ nav{
   z-index: 900;
 }
 
-.my_slides.previous,
+/* .my_slides.previous,
 .my_slides.next {
   z-index: 800;
-}
+} */
 .my_slides.previous {
   transform: translateX(-100%); /* Move 'prev' item to the left */
 }

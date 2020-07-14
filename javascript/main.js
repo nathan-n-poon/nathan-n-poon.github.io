@@ -16,7 +16,7 @@ if(window.mobileCheck()) {
   // alert("you are on mobile!");
 }
 else {
-  console.log(all)
+  // console.log(all)
   for (var i = 0; i < all.length; i++) {
     all[i].style.minHeight = '100vh';
   }
@@ -160,6 +160,11 @@ function changeBackground() {
   }
 }
 
+Number.prototype.mod = function(b) {
+  // Calculate
+  return ((this % b) + b) % b;
+}
+
 //instantiations
 const button = new Button("myBtn"); 
 const divTwoDimensions = new DivDimensions(1,2);
@@ -190,7 +195,7 @@ window.onresize = function(event) {
 
     // Target the last, initial, and next items and give them the relevant class.
     // This assumes there are three or more items.
-    items[totalItems - 1].classList.add("prev");
+    items[totalItems - 1].classList.add("previous");
     items[0].classList.add("active");
     items[1].classList.add("next");
   }
@@ -205,60 +210,30 @@ window.onresize = function(event) {
     prev.addEventListener('click', movePrev);
   }
 
-  // Disable interaction by setting 'moving' to true for the same duration as our transition (0.5s = 500ms)
-  function disableInteraction() {
-    moving = true;
-
-    setTimeout(function(){
-      moving = false
-    }, 500);
-  }
-
   function moveCarouselTo(slide) {
-    console.log(slide);
-    console.log(d.getElementsByClassName("active"));
 
     // Check if carousel is moving, if not, allow interaction
     if(!moving) {
 
       // temporarily disable interactivity
-      disableInteraction();
+      moving = true;
+
+      setTimeout(function(){
+        moving = false
+      }, 500);
 
       // Preemptively set variables for the current next and previous slide, as well as the potential next or previous slide.
-      var newPrevious = (slide - 1)%(totalItems-1),
-          newNext = (slide + 1)%(totalItems-1),
-          oldPrevious = (slide - 2)%(totalItems-1),
-          oldNext = (slide + 2)%(totalItems-1);
+      var slide = slide.mod(totalItems),
+          newPrevious = (slide - 1).mod(totalItems),
+          newNext = (slide + 1).mod(totalItems),
+          oldPrevious = (slide - 2).mod(totalItems),
+          oldNext = (slide + 2).mod(totalItems);
 
-      // Test if carousel has more than three items
-      // if ((totalItems - 1) > 3) {
-
-        // Checks if the new potential slide is out of bounds and sets slide numbers
-        if (newPrevious <= 0) {
-          oldPrevious = (totalItems - 1);
-        } else if (newNext >= (totalItems - 1)){
-          oldNext = 0;
-        }
-
-        // Check if current slide is at the beginning or end and sets slide numbers
-        if (slide === 0) {
-          newPrevious = (totalItems - 1);
-          oldPrevious = (totalItems - 2);
-          oldNext = (slide + 1);
-        } else if (slide === (totalItems -1)) {
-          newPrevious = (slide - 1);
-          newNext = 0;
-          oldNext = 1;
-        }
-
-        // Now we've worked out where we are and where we're going, by adding and removing classes, we'll be triggering the carousel's transitions.
-        console.group(oldNext);
-        // Based on the current slide, reset to default classes.
         items[oldPrevious].className = itemClassName;
         items[oldNext].className = itemClassName;
 
         // Add the new classes
-        items[newPrevious].className = itemClassName + " prev";
+        items[newPrevious].className = itemClassName + " previous";
         items[slide].className = itemClassName + " active";
         items[newNext].className = itemClassName + " next";
       // }
@@ -271,13 +246,7 @@ window.onresize = function(event) {
     // Check if moving
     if (!moving) {
 
-      // If it's the last slide, reset to 0, else +1
-      if (slide === (totalItems - 1)) {
-        slide = 0;
-      } else {
-        slide++;
-      }
-
+      slide++;
       // Move carousel to updated slide
       moveCarouselTo(slide);
     }
@@ -289,13 +258,7 @@ window.onresize = function(event) {
     // Check if moving
     if (!moving) {
 
-      // If it's the first slide, set as the last slide, else -1
-      if (slide === 0) {
-        slide = (totalItems - 1);
-      } else {
-        slide--;
-      }
-
+      slide--;
       // Move carousel to updated slide
       moveCarouselTo(slide);
     }
