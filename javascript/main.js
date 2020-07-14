@@ -184,26 +184,11 @@ window.onresize = function(event) {
 
 !(function(d){
   // Variables to target our base class,  get carousel items, count how many carousel items there are, set the slide to 0 (which is the number that tells us the frame we're on), and set motion to true which disables interactivity.
-  var itemClassName = "vertical_flex my_slides";
   var items = d.querySelectorAll(".my_slides");
-  console.log(items);
-  var totalItems = items.length;
+  const totalItems = items.length;
   var  slide = 0;
   var  moving = true; 
-    const inactiveSlide = "inactive_slide";
-
-
-  // To initialise the carousel we'll want to update the DOM with our own classes
-  function setInitialClasses() {
-
-    // Target the last, initial, and next items and give them the relevant class.
-    // This assumes there are three or more items.
-    items[totalItems - 1].classList.add("previous");
-    items[0].classList.add("active");
-    items[1].classList.add("next");
-  }
-
-  // Set click events to navigation buttons
+  const inactiveSlide = "inactive_slide";
 
   function setEventListeners() {
     var next = d.getElementById('slideshow_button--next'),
@@ -214,8 +199,6 @@ window.onresize = function(event) {
   }
 
   function moveCarouselTo(slide) {
-
-    console.log(items)
 
     // Check if carousel is moving, if not, allow interaction
     if(!moving) {
@@ -239,7 +222,7 @@ window.onresize = function(event) {
 
         // Add the new classes
         items[newPrevious].className = inactiveSlide + " previous";
-        items[slide].className = itemClassName + " active";
+        items[slide].className = "vertical_flex my_slides active";
         items[newNext].className = inactiveSlide + " next";
       // }
     }
@@ -271,7 +254,6 @@ window.onresize = function(event) {
 
   // Initialise carousel
   function initCarousel() {
-    setInitialClasses();
     setEventListeners();
 
     // Set moving to false now that the carousel is ready

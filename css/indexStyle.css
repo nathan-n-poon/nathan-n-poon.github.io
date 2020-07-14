@@ -101,7 +101,7 @@ nav{
 /* -------------------------------------------------------------------------------------------------------- */
 
 #div2 {
-    background-color: #f7ecc1;
+    background-color: #93d9c7;
     justify-content: space-evenly;
     
     border-style: groove;
@@ -222,7 +222,7 @@ nav{
 
 #div4 {
     justify-content: space-evenly;
-    background-color: #e3e8ff;
+    background-color: #f7ecc1;
 }
 
 #div4_header {
@@ -244,12 +244,15 @@ nav{
     height: 300px;
 }
 
-
+#div5 {
+    background-color: #f7b9b0;
+    /* #fcdddc */
+}
 
 
   #myBtn {
-      height: 75px;
-      width: 75px;
+    height: 75px;
+    width: 75px;
     background-image: url("../images/index/top.png");
     size: 100%;
     display: none; /* Hidden by default */
@@ -274,6 +277,7 @@ nav{
 
 .slideshow_wrapper *{
     box-sizing: border-box;
+    /* transition: transform 20s ease-in-out, opacity 0s, z-index 0s; */
 }
 
 #slideshow {
@@ -281,27 +285,26 @@ nav{
 }
 
 .my_slides {
-    transition: transform .5s, opacity .5s, z-index .5s;
+    /* transition: transform 300.5s, opacity 300.5s, z-index 300.5s; */
 }
 .inactive_slide {
-    opacity: 0;
+    /* opacity: 0; */
     position: absolute;
     top: 0;
     z-index: 100;
-    transition: transform .5s, opacity .5s, z-index .5s;
     /* opacity: 0;
   position: absolute;
   top:0;
   width: 100%;
   margin: auto;
   padding: 1rem 4rem;
-  z-index: 100;
-  transition: transform .5s, opacity .5s, z-index .5s; */
+  z-index: 100; */
 }
 
 .inactive_slide * {
     height: 0px;
     opacity: 0;
+    z-index: -999;
 }
 
 .my_slides.initial,
@@ -309,7 +312,6 @@ nav{
   opacity: 1;
   position: relative;
   z-index: 900;
-  transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 /* .my_slides.previous,
@@ -318,11 +320,9 @@ nav{
 } */
 .my_slides.previous {
   transform: translateX(-100%); /* Move 'prev' item to the left */
-  transition: transform .5s, opacity .5s, z-index .5s;
 }
 .my_slides.next {
   transform: translateX(100%); /* Move 'next' item to the right */
-  transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 #slideshow_button--previous,
@@ -341,10 +341,10 @@ nav{
   color: antiquewhite;
 }
 #slideshow_button--previous {
-  left:2.5%;
+  left:0%;
 }
 #slideshow_button--next {
-  right:2.5%;
+  right:0%;
 }
 #slideshow_button--previous::after,
 #slideshow_button--next::after {
@@ -356,4 +356,29 @@ nav{
 #sldeshow_button--next::after {
   left: 47%;
   transform: translate(-50%, -50%);
+}
+
+#right_bar {
+    position: absolute;
+    right: 0px;
+}
+
+#left_bar {
+    position: absolute;
+    left: 0px;
+}
+
+.bar {
+    z-index: 1002;
+    top: 0px;
+    transition: background-color .5s, opacity .5s;
+    opacity: 50%;
+    height: 100%;
+    width: 50px;
+}
+
+.bar:hover {
+    z-index: 1000;
+    background-color: grey;
+    opacity: 1;
 }
