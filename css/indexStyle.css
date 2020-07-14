@@ -8,12 +8,10 @@
 }
 
 html {
-    background-color: yellow;
 
 }
 
 body {
-    background-color: black;
 
     z-index: 0;
 
@@ -283,14 +281,14 @@ nav{
 }
 
 .my_slides {
-
+    transition: transform .5s, opacity .5s, z-index .5s;
 }
 .inactive_slide {
     opacity: 0;
     position: absolute;
     top: 0;
     z-index: 100;
-    transition: transform 103.5s, opacity .5s, z-index .5s;
+    transition: transform .5s, opacity .5s, z-index .5s;
     /* opacity: 0;
   position: absolute;
   top:0;
@@ -311,6 +309,7 @@ nav{
   opacity: 1;
   position: relative;
   z-index: 900;
+  transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 /* .my_slides.previous,
@@ -319,9 +318,11 @@ nav{
 } */
 .my_slides.previous {
   transform: translateX(-100%); /* Move 'prev' item to the left */
+  transition: transform .5s, opacity .5s, z-index .5s;
 }
 .my_slides.next {
   transform: translateX(100%); /* Move 'next' item to the right */
+  transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 #slideshow_button--previous,
