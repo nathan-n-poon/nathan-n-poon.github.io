@@ -185,10 +185,13 @@ window.onresize = function(event) {
 !(function(d){
   // Variables to target our base class,  get carousel items, count how many carousel items there are, set the slide to 0 (which is the number that tells us the frame we're on), and set motion to true which disables interactivity.
   var itemClassName = "vertical_flex my_slides";
-      items = d.getElementsByClassName(itemClassName),
-      totalItems = items.length,
-      slide = 0,
-      moving = true; 
+  var items = d.querySelectorAll(".my_slides");
+  console.log(items);
+  var totalItems = items.length;
+  var  slide = 0;
+  var  moving = true; 
+    const inactiveSlide = "inactive_slide";
+
 
   // To initialise the carousel we'll want to update the DOM with our own classes
   function setInitialClasses() {
@@ -212,6 +215,8 @@ window.onresize = function(event) {
 
   function moveCarouselTo(slide) {
 
+    console.log(items)
+
     // Check if carousel is moving, if not, allow interaction
     if(!moving) {
 
@@ -229,13 +234,13 @@ window.onresize = function(event) {
           oldPrevious = (slide - 2).mod(totalItems),
           oldNext = (slide + 2).mod(totalItems);
 
-        items[oldPrevious].className = itemClassName;
-        items[oldNext].className = itemClassName;
+        items[oldPrevious].className = inactiveSlide;
+        items[oldNext].className = inactiveSlide;
 
         // Add the new classes
-        items[newPrevious].className = itemClassName + " previous";
+        items[newPrevious].className = inactiveSlide + " previous";
         items[slide].className = itemClassName + " active";
-        items[newNext].className = itemClassName + " next";
+        items[newNext].className = inactiveSlide + " next";
       // }
     }
   }
@@ -275,5 +280,6 @@ window.onresize = function(event) {
 
   // make it rain
   initCarousel();
+  moveCarouselTo(0);
 
 }(document));
