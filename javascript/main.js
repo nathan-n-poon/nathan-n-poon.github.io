@@ -139,7 +139,10 @@ function changeBackground() {
     poot = document.getElementById("div1_cover");
     poot.src = "images/index/trees.jpg";
     spencer = document.getElementById("div1_text");
-    spencer.setAttribute('style', 'color: white');
+    console.log(spencer);
+    spencer.style.color = "white";
+    spencer.style.zIndex = 10;
+    console.log(spencer);
     if(!window.mobileCheck)
     {
       poot.setAttribute('style', 'width: 500px');
