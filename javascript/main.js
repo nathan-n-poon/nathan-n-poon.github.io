@@ -8,7 +8,7 @@ window.mobileCheck = function() {
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
 
-var all = document.getElementsByClassName('vertical_flex');
+var all = document.querySelectorAll('.vertical_flex , .slideshow_wrapper')
 if(window.mobileCheck()) {
   for (var i = 0; i < all.length; i++) {
     all[i].style.height = '1500px';
@@ -16,6 +16,7 @@ if(window.mobileCheck()) {
   // alert("you are on mobile!");
 }
 else {
+  // console.log(all)
   for (var i = 0; i < all.length; i++) {
     all[i].style.minHeight = '100vh';
   }
@@ -54,7 +55,7 @@ class Button {
 //returns the top and bottom coordinates for a vertical (main) div
 class DivDimensions {
   constructor(min, max) {
-    this.numberOfDivs = document.querySelectorAll("body .vertical_flex").length;
+    this.numberOfDivs = document.querySelectorAll("body .main").length;
     this.min = min;
     this.max = max;
   }
@@ -159,6 +160,11 @@ function changeBackground() {
   }
 }
 
+Number.prototype.mod = function(b) {
+  // Calculate
+  return ((this % b) + b) % b;
+}
+
 //instantiations
 const button = new Button("myBtn"); 
 const divTwoDimensions = new DivDimensions(1,2);
@@ -176,3 +182,68 @@ window.onresize = function(event) {
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+!(function(d){
+  // Variables to target our base class,  get carousel items, count how many carousel items there are, set the slide to 0 (which is the number that tells us the frame we're on), and set motion to true which disables interactivity.
+  var items = d.querySelectorAll(".my_slides");
+  const totalItems = items.length;
+  var  slide = 0;
+  var  moving = true; 
+  const inactiveSlide = "inactive_slide";
+
+  function setEventListeners() {
+    var next = d.getElementById('slideshow_button--next'),
+        prev = d.getElementById('slideshow_button--previous');
+
+    next.addEventListener('click', moveNext);
+    prev.addEventListener('click', movePrev);
+  }
+
+  function moveCarouselTo(slide) {
+
+    // Check if carousel is moving, if not, allow interaction
+    if(!moving) {
+
+      // temporarily disable interactivity
+      moving = true;
+
+      setTimeout(function(){
+        moving = false
+      }, 500);
+
+      // Preemptively set variables for the current next and previous slide, as well as the potential next or previous slide.
+      var slide = slide.mod(totalItems),
+          newPrevious = (slide - 1).mod(totalItems),
+          newNext = (slide + 1).mod(totalItems),
+          oldPrevious = (slide - 2).mod(totalItems),
+          oldNext = (slide + 2).mod(totalItems);
+
+        items[oldPrevious].className = inactiveSlide;
+        items[oldNext].className = inactiveSlide;
+
+        // Add the new classes
+        items[newPrevious].className = inactiveSlide + " previous";
+        items[slide].className = "vertical_flex my_slides active";
+        items[newNext].className = inactiveSlide + " next";
+      // }
+    }
+  }
+
+  function moveNext() {
+    if (!moving) {
+      slide++;
+      moveCarouselTo(slide);
+    }
+  }
+
+  function movePrev() {
+    if (!moving) {
+      slide--;
+      moveCarouselTo(slide);
+    }
+  }
+
+  setEventListeners();
+  moving = false;
+  moveCarouselTo(0);
+
+}(document));

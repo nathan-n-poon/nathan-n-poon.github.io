@@ -5,9 +5,7 @@
 .background-image {
   pointer-events: none;
   position: absolute;
-  /* height: 100%; */
-  z-index: -1;
-  /* height: max(100%, 682px); */
+  z-index: 1;
   width: max(100vw, 955px);
 }
 
@@ -39,21 +37,10 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-/* 
-nav li {
-  display: inline-block;
-  padding: 5px 5px;
-}
-
-nav ul{
-  list-style: none;
-  margin: 0 2px;
-  padding: 0;
-} */
 
 nav a {
   font-weight: normal;
-  font-size: max(6vh, 40px);
+  font-size: 40px;
   color: black;
 }
 
@@ -63,4 +50,14 @@ a:link {
 
 a:hover {
   color: blueviolet;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

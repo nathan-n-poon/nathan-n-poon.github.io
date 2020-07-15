@@ -9,10 +9,12 @@
 
     <body>
 
+        <!-- return to top button -->
         <button onclick="javascript: button.topFunction()" id="myBtn" title="Go to top"></button>
         
+        <!-- background image for first div -->
         <img class="background-image" id="div1_cover" src="images/index/clouds.jpg" style="opacity: 80%;">
-        <div id="div1" class="vertical_flex">
+        <div id="div1" class="vertical_flex main">
             <nav>
                 <a href="gliblog.html">bloog</a>
                 <a href="tart.html">tart</a>
@@ -25,7 +27,7 @@
             </div>
         </div>
 
-        <div id='div2' class="vertical_flex">
+        <div id='div2' class="vertical_flex main">
             <div class="horizontal_flex">
                 <div id="div2_header">
                     <h1>Nathan Poon:</h1>
@@ -41,7 +43,7 @@
                     </div>
                 </div>
             </div>
-
+    
             <div class="break"></div>
 
             <div class="horizontal_flex" style="padding-bottom: 2%;">
@@ -56,53 +58,68 @@
                 </div>
             </div>
         </div>
-
-        <div id='div3' class="vertical_flex my_slides fade">
-
-            <div id="div3_text">
-                <h1>I'm a programmer on BEAR UBC:</h1>
-
-                <h2>'"BEAR” stands for the national animal of Canada. [sic]' Click the BEAR icon below to learn more!</h2>
-            </div>
-
-            <div class="break"></div>
-
-            <div class="horizontal_flex">
-                <div id="div3_img_1">
-                    <a href="https://bearubc.com/" target="_blank">
-                        <img src="images/index/polarBear.png"; id="bear" style="z-index: 2;">
-                    </a>
-                </div>
-            
-                <div id="div3_img_2">
-                    <img id="doge" src="images/index/doge.jpg" onclick="doge()">
-                </div>
-            </div>
-        </div> 
-
-        <div id='div4' class="vertical_flex my_slides fade">
-            <div class="horizontal_flex">
-                <div id="div2_header">
-                    <h1>Nathan Poon:</h1>
-                </div>
-                
-                <div>
-                    <div id="div2_img_1">
-                        <img src="images/index/bike.jpg"; id="bear" style="z-index: 2;">
+    
+        <!-- holds various divs for a slideshow -->
+        <div class="slideshow_wrapper main">
+            <div id="slideshow">
+                    
+                <div id='div3' class="vertical_flex my_slides fade initial">
+        
+                    <div id="div3_text">
+                        <h1>I'm a programmer on BEAR UBC:</h1>
+        
+                        <h2>'"BEAR” stands for the national animal of Canada. [sic]' Click the BEAR icon below to learn more!</h2>
+                    </div>
+        
+                    <div class="break"></div>
+        
+                    <div class="horizontal_flex">
+                        <div id="div3_img_1">
+                            <a href="https://bearubc.com/" target="_blank">
+                                <img src="images/index/polarBear.png"; id="bear" style="z-index: 2;">
+                            </a>
+                        </div>
+                    
+                        <div id="div3_img_2">
+                            <img id="doge" src="images/index/doge.jpg" onclick="doge()">
+                        </div>
+                    </div>
+                </div> 
+        
+                <div id='div4' class="vertical_flex my_slides fade">
+                    <div class="horizontal_flex">
+                        <div id="div4_header">
+                            <h2>I enjoy biking and reading novels in my spare time.</h2>
+                        </div>
+                        
+                        <div>
+                            <div id="div4_img_1">
+                                <img src="images/index/bike.jpg"; id="shadow" style="z-index: 2;">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="break"></div>
+        
+                    <div class="horizontal_flex" style="padding-bottom: 2%;">
+                        <div id="div4_img_2">
+                            <img id="dothrakiSea" src="images/index/bike2.jpg">
+                        </div>
+        
+                        <div id="div4_img_3">
+                            <img id ="fear" src="images/index/dune.jpg">
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="break"></div>
-
-            <div class="horizontal_flex" style="padding-bottom: 2%;">
-                <div id="div2_img_2">
-                    <img id="silhouette" src="images/index/bike2.jpg">
+        
+                <div id="div5" class="vertical_flex my_slides fade" style="justify-content: center; align-items: center;">
+                    <h1>More to come</h1>
                 </div>
-
-                <div id="div2_text">
-                    <h2>Don't knock my bike, or I'll clean your clock.</h2>
-                </div>
+                
+                
+                
+                <div id="right_bar" class="bar"><div id="slideshow_button--next" class="noselect">&#10095</div></div>
+                <div id="left_bar" class="bar"><div id="slideshow_button--previous" class="noselect">&#10094</div></div>
             </div>
         </div>
 
