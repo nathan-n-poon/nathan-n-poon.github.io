@@ -255,7 +255,62 @@ nav{
 
 #div5 {
     background-color: #9dbdb0;
+    justify-content: space-evenly;
     /* #fcdddc */
+}
+
+#div5 h1 {
+    font-size: 35px;
+    /* position: absolute; */
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    top: 5%;
+}
+
+#div5 h2 {
+    font-size: 25px;
+    /* position: absolute; */
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    /* top: 5%; */
+    margin-top: -5%;
+}
+
+/* #div5 h2 {
+    margin-top: -50%;
+} */
+
+#div5 .horizontal_flex {
+    padding-bottom: 0%;
+}
+
+.profile {
+    margin-top: 5%;
+    text-align: center;
+    /* min-height: 300px; */
+    padding-bottom: 2.5%;
+    padding-top: 1%;
+    width: 200px;
+    background-color: #B09DBD;
+    border-radius: 20px;
+}
+
+#div5 img {
+    height: 150px;
+    width: 150px;
+}
+
+ul {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 5%;
+}
+
+li {
+    padding-top: 10%;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -310,18 +365,10 @@ nav{
 }
 
 .inactive_slide {
-    /* opacity: 0; */
     position: absolute;
     top: 0;
     z-index: 100;
     transition: transform .5s, opacity .5s, z-index .5s;
-    /* opacity: 0;
-  position: absolute;
-  top:0;
-  width: 100%;
-  margin: auto;
-  padding: 1rem 4rem;
-  z-index: 100; */
 }
 
 .inactive_slide * {
