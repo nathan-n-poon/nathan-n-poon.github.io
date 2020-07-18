@@ -193,6 +193,23 @@ window.onresize = function(event) {
   var  moving = true; 
   const inactiveSlide = "inactive_slide";
 
+  minHeight = items[0].scrollHeight;
+  for(i in items) {
+    if(i.scrollHeight < minHeight)
+    {
+      minHeight = i.scrollHeight;
+    }
+  }
+
+  function setMinHeights() {
+    console.log(d.querySelectorAll(".inactive_slide"));
+    var elements = d.querySelectorAll(".inactive_slide");
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].style.height = minHeight;
+      console.log(elements[i].style + "px");
+    }
+  }
+
   function setEventListeners() {
     var next = d.getElementById('slideshow_button--next'),
         prev = d.getElementById('slideshow_button--previous');
@@ -227,6 +244,7 @@ window.onresize = function(event) {
         items[newPrevious].className = inactiveSlide + " previous";
         items[slide].className = "vertical_flex my_slides active";
         items[newNext].className = inactiveSlide + " next";
+        setMinHeights();
       // }
     }
   }

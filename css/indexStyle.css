@@ -413,15 +413,16 @@ li {
     position: absolute;
     top: 0;
     z-index: 100;
+    opacity: 0;
     transition: transform .5s, opacity .5s, z-index .5s;
 }
 
-.inactive_slide * {
-    height: 0px;
-    opacity: 0;
+/* .inactive_slide * { */
+    /* height: 0px; */
+    /* opacity: 0;
     z-index: -999;
     transition: transform .5s, opacity .5s, z-index .5s;
-}
+} */
 
 .my_slides.initial,
 .my_slides.active {
@@ -432,12 +433,12 @@ li {
 
 .my_slides.previous {
   z-index: 800;
-  transform: translateX(-100%); /* Move 'prev' item to the left */
+  transform: translateX(-100vw); /* Move 'prev' item to the left */
   transition: transform .5s, opacity .5s, z-index .5s;
 }
 .my_slides.next {
   z-index: 800;
-  transform: translateX(100%); /* Move 'next' item to the right */
+  transform: translateX(100vw); /* Move 'next' item to the right */
   transition: transform .5s, opacity .5s, z-index .5s;
 }
 
