@@ -205,7 +205,7 @@ window.onresize = function(event) {
     console.log(d.querySelectorAll(".inactive_slide"));
     var elements = d.querySelectorAll(".inactive_slide");
     for (var i = 0; i < elements.length; i++) {
-      elements[i].style.height = minHeight;
+      elements[i].style.height = `${minHeight}px`;
       console.log(elements[i].style + "px");
     }
   }

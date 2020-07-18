@@ -410,6 +410,7 @@ li {
 }
 
 .inactive_slide {
+    width: 1000px;
     position: absolute;
     top: 0;
     z-index: 100;
@@ -431,14 +432,14 @@ li {
   z-index: 900;
 }
 
-.my_slides.previous {
+.previous {
   z-index: 800;
-  transform: translateX(-100vw); /* Move 'prev' item to the left */
+  transform: translateX(-100%); /* Move 'prev' item to the left */
   transition: transform .5s, opacity .5s, z-index .5s;
 }
-.my_slides.next {
+.next {
   z-index: 800;
-  transform: translateX(100vw); /* Move 'next' item to the right */
+  transform: translateX(100%); /* Move 'next' item to the right */
   transition: transform .5s, opacity .5s, z-index .5s;
 }
 
