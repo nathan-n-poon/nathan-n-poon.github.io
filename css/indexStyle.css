@@ -339,6 +339,39 @@ li {
 
 /* -------------------------------------------------------------------------------------------------------- */
 
+
+#div7 {
+    background-color: #a8b8bf;
+    justify-content: space-evenly; 
+    align-items: center;
+
+    border-style: groove;
+    border-color: black;
+    border-width: 10px;
+}
+
+#div7 * {
+    padding-bottom: 5%;
+}
+
+#div7 h2 {
+    text-align: center;
+    color: #1c29e6;
+}
+
+#resume img{
+    height: 200px;
+}
+
+#email img {
+    width: 200px;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------------------------------- */
+
   #myBtn {
     height: 75px;
     width: 75px;
