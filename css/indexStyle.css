@@ -411,6 +411,11 @@ li {
     transition: transform .5s, opacity .5s, z-index .5s;
 }
 
+#slideshow_cover {
+    position: absolute;
+    opacity: 0;
+}
+
 .my_slides {
     transition: transform .5s, opacity .5s, z-index .5s;
 }

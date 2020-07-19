@@ -139,10 +139,10 @@ function changeBackground() {
     poot = document.getElementById("div1_cover");
     poot.src = "images/index/trees.jpg";
     spencer = document.getElementById("div1_text");
-    console.log(spencer);
+    // console.log(spencer);
     spencer.style.color = "white";
     spencer.style.zIndex = 10;
-    console.log(spencer);
+    // console.log(spencer);
     if(!window.mobileCheck)
     {
       poot.setAttribute('style', 'width: 500px');
@@ -263,3 +263,15 @@ window.onresize = function(event) {
   moveCarouselTo(0);
 
 }(document));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// function aboveOrBelowDiv(lowerDiv, upperDiv) {
+//   DivDimensions divdimensions = new divTwoDimensions();
+// }
+
+var vehicles = document.querySelectorAll(".main");
+var ids = [].map.call(vehicles, function(elem) {
+  return elem.id;  
+});
+console.log(ids);
