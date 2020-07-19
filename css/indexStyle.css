@@ -4,7 +4,8 @@
 
 :root {
     --nav-font-height: 50px;
-    --default_img_height: 300px 
+    --default_img_height: 300px; 
+    --min-slideshow-height: 0px;
 }
 
 html {
@@ -19,7 +20,7 @@ body {
 
     /* z-index: 0; */
 
-    transform: translateX(500px);
+    /* transform: translateX(500px); */
 
     overflow-y: scroll;
     overflow-x: hidden;
@@ -415,7 +416,7 @@ li {
 }
 
 .inactive_slide {
-    width: 1000px;
+    height: var(--min-slideshow-height);
     position: absolute;
     top: 0;
     z-index: 100;

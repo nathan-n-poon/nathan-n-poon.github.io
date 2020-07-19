@@ -202,12 +202,7 @@ window.onresize = function(event) {
   }
 
   function setMinHeights() {
-    console.log(d.querySelectorAll(".inactive_slide"));
-    var elements = d.querySelectorAll(".inactive_slide");
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].style.height = `${minHeight}px`;
-      console.log(elements[i].style + "px");
-    }
+    document.documentElement.style.setProperty('--min-slideshow-height', `${minHeight}px`);
   }
 
   function setEventListeners() {
