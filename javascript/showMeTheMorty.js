@@ -20,8 +20,8 @@ function getCurrentRotation(el){
     return 0;
   }
 
-function vh(v) {
-    var h = Math.max(document.documentElement.clientwidth, window.innerwidth || 0);
+  function vh(v) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     return (v * h) / 100;
   }
   

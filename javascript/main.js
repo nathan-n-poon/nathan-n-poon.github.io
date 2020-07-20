@@ -8,7 +8,7 @@ window.mobileCheck = function() {
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
 
-var all = document.querySelectorAll('.vertical_flex , .slideshow_wrapper')
+var all = document.querySelectorAll('.vertical_flex , #slideshow_wrapper')
 if(window.mobileCheck()) {
   for (var i = 0; i < all.length; i++) {
     all[i].style.height = '1500px';
@@ -54,18 +54,16 @@ class Button {
 
 //returns the top and bottom coordinates for a vertical (main) div
 class DivDimensions {
-  constructor(min, max) {
-    this.numberOfDivs = document.querySelectorAll("body .main").length;
-    this.min = min;
-    this.max = max;
+  constructor(divID) {
+    var elem = document.getElementById(divID).getBoundingClientRect();
+    this.min = elem.top;
+    this.max = elem.bottom;
   }
   get minOffset() {
-    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
-    return this.min * this.divHeight;
+    return this.min;
   }
   get maxOffset() {
-    this.divHeight = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)) / this.numberOfDivs;
-    return this.max * this.divHeight;
+    return this.max;
   }
 }
 
@@ -78,16 +76,17 @@ class Shadow {
 
   castShadow(wrapper1, wrapper2) {
 
-    var scrollPos = window.scrollY;
+    var scrollPos = window.scrollY + vh(100);
   
     var percentOffset = (scrollPos - this.dimensions.minOffset) / (this.dimensions.maxOffset - this.dimensions.minOffset);
   
-    if(percentOffset >= 0 || percentOffset <= 1)
+    // console.log(percentOffset);
+    if(percentOffset >= -1 || percentOffset <= 2)
     {
       percentOffset = Math.max(0, percentOffset);
       percentOffset = Math.min(1, percentOffset);
     
-      this.displacement.style.marginTop = `${(-0.9*height + percentOffset * -1*height/0.8)}px` ;
+      this.displacement.style.marginTop = `${(-0.5*height + percentOffset * -1*height)}px` ;
     
       if(detectWrap(wrapper1, wrapper2)) 
       {
@@ -134,6 +133,11 @@ function vw(v) {
   return (v * w) / 100;
 }
 
+function vh(v) {
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  return (v * h) / 100;
+}
+
 function changeBackground() {
   if(vw(100) <= 500 || window.mobileCheck()) {
     poot = document.getElementById("div1_cover");
@@ -170,13 +174,15 @@ Number.prototype.mod = function(b) {
 
 //instantiations
 const button = new Button("myBtn"); 
-const divTwoDimensions = new DivDimensions(1,2);
+const divTwoDimensions = new DivDimensions("div2");
 const shadowfax = new Shadow("#rectangle", divTwoDimensions);
 
 //invocations
 window.onscroll = function() {
   button.scrollFunction();
   shadowfax.castShadow("div2_header", "div2_img_1");
+  aboveOrBelowDiv();
+  cover();
 };
 window.onresize = function(event) {
   copySize("#div2_header h1", "#div2_header #rectangle");
@@ -266,12 +272,55 @@ window.onresize = function(event) {
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// function aboveOrBelowDiv(lowerDiv, upperDiv) {
-//   DivDimensions divdimensions = new divTwoDimensions();
-// }
+inDiv = false;
+timer = 0;
+cooldown = false;
+const dimensions = new DivDimensions("slideshow_wrapper");
 
-var vehicles = document.querySelectorAll(".main");
-var ids = [].map.call(vehicles, function(elem) {
-  return elem.id;  
-});
-console.log(ids);
+function aboveOrBelowDiv(divID) {
+  
+  if(window.scrollY+ vh(100) > dimensions.minOffset && window.scrollY < dimensions.maxOffset) {
+    inDiv = true;
+  }
+  else {
+    inDiv = false;
+  }
+  console.log(inDiv);
+}
+
+setInterval(function() {
+  if(Math.round(timer) > 0 && !inDiv) {
+    timer -= 1;
+    cooldown = false;
+  }
+  if(Math.max(0,Math.round(timer)) == 0) {
+    cooldown = true;
+  }
+}, 10);
+
+function cover() {
+  if (inDiv) {
+    document.getElementById("slideshow_cover").style.opacity = 0;
+    document.getElementById("slideshow_cover").style.zIndex = 0;
+    timer = 300;
+    // setTimeout(function(){ document.getElementById("slideshow_cover").style.opacity = 1; }, 3000);
+    // document.getElementById("slideshow_cover").style.opacity = 1;
+  }
+  if(!inDiv && cooldown) {
+    document.getElementById("slideshow_cover").style.opacity = 1;
+    document.getElementById("slideshow_cover").style.zIndex = 99999;
+    console.log("poot");
+  }
+}
+
+
+
+
+// var vehicles = document.querySelectorAll(".main");
+// var ids = [].map.call(vehicles, function(elem) {
+//   return elem.id;  
+// });
+// console.log(ids);
+
+x = new DivDimensions('slideshow_wrapper');
+document.documentElement.style.setProperty('--deleteMargin', `${x.minOffset}px`);

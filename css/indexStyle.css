@@ -6,6 +6,8 @@
     --nav-font-height: 50px;
     --default_img_height: 300px; 
     --min-slideshow-height: 0px;
+
+    --marginDelete: 0px;
 }
 
 html {
@@ -400,7 +402,7 @@ li {
     background-color: grey; /* Add a dark-grey background on hover */
   }
 
-.slideshow_wrapper *{
+#slideshow_wrapper *{
     box-sizing: border-box;
     /* transition: transform 20s ease-in-out, opacity 0s, z-index 0s; */
     transition: transform .5s, opacity .5s, z-index .5s;
@@ -412,8 +414,19 @@ li {
 }
 
 #slideshow_cover {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #0b133b;
+    color: white;
+
+    z-index: 99999;
     position: absolute;
-    opacity: 0;
+    opacity: 1;
+    transition: opacity 1s ease-in, z-index 1s ease-in;
+
+    justify-content: space-evenly; 
+    align-items: center;
 }
 
 .my_slides {
@@ -510,4 +523,14 @@ li {
     z-index: 1000;
     background-color: grey;
     opacity: 1;
+}
+
+
+#delete {
+    position: absolute;
+    margin-top: var(--deleteMargin);
+    height: 30px;
+    width: 100vw;
+    color: red;
+    z-index: 99999;
 }
