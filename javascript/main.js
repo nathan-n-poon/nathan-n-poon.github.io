@@ -76,7 +76,7 @@ class Shadow {
 
   castShadow(wrapper1, wrapper2) {
 
-    var scrollPos = window.scrollY + vh(100);
+    var scrollPos = window.scrollY + vh(90);
   
     var percentOffset = (scrollPos - this.dimensions.minOffset) / (this.dimensions.maxOffset - this.dimensions.minOffset);
   
