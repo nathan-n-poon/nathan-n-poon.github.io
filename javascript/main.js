@@ -7,6 +7,10 @@ window.mobileCheck = function() {
 };
 //functions on setup
 copySize("#div2_header h1", "#div2_header #rectangle");
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 
 var all = document.querySelectorAll('.vertical_flex , #slideshow_wrapper')
 if(window.mobileCheck()) {
