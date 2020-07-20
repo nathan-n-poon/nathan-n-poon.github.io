@@ -186,7 +186,9 @@ window.onscroll = function() {
   button.scrollFunction();
   shadowfax.castShadow("div2_header", "div2_img_1");
   aboveOrBelowDiv();
-  cover();
+  if(!window.mobileCheck) {
+    cover();
+  }
 };
 window.onresize = function(event) {
   copySize("#div2_header h1", "#div2_header #rectangle");
