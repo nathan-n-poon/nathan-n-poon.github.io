@@ -311,13 +311,13 @@ setInterval(function() {
 
 setInterval(function() { if(!window.mobileCheck()) {aboveOrBelowDiv()}}, 10);
 setInterval(function() { if(!window.mobileCheck()) {cover()}}, 10);
-if(window.mobileCheck()) {
-  document.getElementById("slideshow_cover").style.opacity = 0;
-  document.getElementById("slideshow_cover").style.zIndex = 0;
+if(window.mobileCheck()) {  
+  var myobj = document.getElementById("slideshow_cover");
+  myobj.remove();
 }
 
 function cover() {
-  console.log("morgan");
+  // console.log("morgan");
   if (fadeThreshhold) {
     document.getElementById("slideshow_cover").style.opacity = 0;
     document.getElementById("slideshow_cover").style.zIndex = 0;
@@ -328,7 +328,7 @@ function cover() {
   else if(!inDiv && cooldown) {
     document.getElementById("slideshow_cover").style.opacity = 1;
     document.getElementById("slideshow_cover").style.zIndex = 99999;
-    console.log("poot");
+    // console.log("poot");
   }
 }
 
