@@ -311,7 +311,10 @@ setInterval(function() {
 
 setInterval(function() { if(!window.mobileCheck()) {aboveOrBelowDiv()}}, 10);
 setInterval(function() { if(!window.mobileCheck()) {cover()}}, 10);
-console.log(window.mobileCheck());
+if(window.mobileCheck()) {
+  document.getElementById("slideshow_cover").style.opacity = 0;
+  document.getElementById("slideshow_cover").style.zIndex = 0;
+}
 
 function cover() {
   console.log("morgan");
