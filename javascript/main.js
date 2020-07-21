@@ -306,7 +306,7 @@ function cover() {
   if (inDiv) {
     document.getElementById("slideshow_cover").style.opacity = 0;
     document.getElementById("slideshow_cover").style.zIndex = 0;
-    timer = 300;
+    timer = 150;
     // setTimeout(function(){ document.getElementById("slideshow_cover").style.opacity = 1; }, 3000);
     // document.getElementById("slideshow_cover").style.opacity = 1;
   }
