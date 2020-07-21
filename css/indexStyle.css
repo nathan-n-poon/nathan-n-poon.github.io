@@ -410,6 +410,10 @@ li {
     background-color: grey; /* Add a dark-grey background on hover */
   }
 
+  #slideshow_wrapper {
+    width: 100%;
+}
+  
 #slideshow_wrapper *{
     box-sizing: border-box;
     /* transition: transform 20s ease-in-out, opacity 0s, z-index 0s; */
