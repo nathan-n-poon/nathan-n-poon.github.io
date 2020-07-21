@@ -283,7 +283,7 @@ const dimensions = new DivDimensions("slideshow_wrapper");
 
 function aboveOrBelowDiv(divID) {
   
-  if(window.scrollY+ vh(100) > dimensions.minOffset && window.scrollY < dimensions.maxOffset) {
+  if(window.scrollY + vh(50) > dimensions.minOffset + vh(5) && window.scrollY + vh(50)  < dimensions.maxOffset - vh(5)) {
     inDiv = true;
   }
   else {
