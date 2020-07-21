@@ -309,8 +309,9 @@ setInterval(function() {
   // console.log("why");
 }, 10);
 
-setInterval(aboveOrBelowDiv, 10);
-setInterval(cover, 10);
+setInterval(function() { if(!window.mobileCheck()) {aboveOrBelowDiv()}}, 10);
+setInterval(function() { if(!window.mobileCheck()) {cover()}}, 10);
+console.log(window.mobileCheck());
 
 function cover() {
   console.log("morgan");
