@@ -483,8 +483,8 @@ li {
 #slideshow_button--next {
   position: absolute;
   top:50%;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   transform: translateY(-50%);
   cursor: pointer; 
   z-index: 1001; /* Sit on top of everything */
@@ -492,7 +492,7 @@ li {
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  color: antiquewhite;
+  color: white;
 }
 #slideshow_button--previous {
   left:0%;
@@ -528,7 +528,7 @@ li {
     transition: background-color .5s, opacity .5s;
     opacity: 50%;
     height: 100%;
-    width: 50px;
+    width: 5em;
 }
 
 .bar:hover {
