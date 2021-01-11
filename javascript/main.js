@@ -6,7 +6,7 @@ window.mobileCheck = function() {
   return check;
 };
 //functions on setup
-copySize("#div2_header h1", "#div2_header #rectangle");
+copySize("#nameDiv_header h1", "#nameDiv_header #rectangle");
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
@@ -144,9 +144,9 @@ function vh(v) {
 
 function changeBackground() {
   if(vw(100) <= 500 || window.mobileCheck()) {
-    poot = document.getElementById("div1_cover");
+    poot = document.getElementById("welcomeDiv_cover");
     poot.src = "images/index/trees.jpg";
-    spencer = document.getElementById("div1_text");
+    spencer = document.getElementById("welcomeDiv_text");
     // console.log(spencer);
     spencer.style.color = "white";
     spencer.style.zIndex = 10;
@@ -163,10 +163,10 @@ function changeBackground() {
     // poot.min-width = "450px";
   }
   else {
-    poot = document.getElementById("div1_cover");
+    poot = document.getElementById("welcomeDiv_cover");
     poot.src = "images/index/clouds.jpg";
     poot.setAttribute('style', 'height: max(100vh,500px); border-radius: 0px; pointer-events: none; position: absolute; z-index: -1; width: max(100vw, 955px);');
-    spencer = document.getElementById("div1_text");
+    spencer = document.getElementById("welcomeDiv_text");
     spencer.setAttribute('style', 'color: black');
   }
 }
@@ -178,17 +178,17 @@ Number.prototype.mod = function(b) {
 
 //instantiations
 const button = new Button("myBtn"); 
-const divTwoDimensions = new DivDimensions("div2");
+const divTwoDimensions = new DivDimensions("nameDiv");
 const shadowfax = new Shadow("#rectangle", divTwoDimensions);
 
 //invocations
 window.onscroll = function() {
   button.scrollFunction();
-  shadowfax.castShadow("div2_header", "div2_img_1");
+  shadowfax.castShadow("nameDiv_header", "nameDiv_img_1");
 };
 window.onresize = function(event) {
-  copySize("#div2_header h1", "#div2_header #rectangle");
-  shadowfax.castShadow("div2_header", "div2_img_1");
+  copySize("#nameDiv_header h1", "#nameDiv_header #rectangle");
+  shadowfax.castShadow("nameDiv_header", "nameDiv_img_1");
   changeBackground();
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
