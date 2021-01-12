@@ -11,11 +11,14 @@
 
 html {
     /* overflow-x: hidden;  */
-    scroll-behavior: smooth;
 }
 
 main {
 
+}
+
+#overflowWrapper {
+    overflow-x: hidden;
 }
 
 body {
@@ -78,6 +81,22 @@ nav a{
     color: black;
     font-family: sans-serif;
     font-size: 20px;
+    
+}
+
+nav p{
+    margin-left: 10%;
+    margin-right: 10%;
+    /* padding-bottom: 50%; */
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    display: inline;
+    cursor: pointer;
+}
+
+nav p:hover {
+    color: blue !important;
 }
 
 

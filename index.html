@@ -11,6 +11,8 @@
 
     <body>
 
+    <div id="overflowWrapper">
+
         <div id="delete"></div>
 
         <!-- return to top button -->
@@ -20,9 +22,9 @@
         <img class="background-image" id="welcomeDiv_cover" alt="Clouds on a blue sky" src="images/index/clouds.jpg" style="opacity: 80%;">
         <div id="welcomeDiv" class="vertical_flex main">
             <nav>
-                <a href="#nameDiv">About Me</a>
-                <a href="#slideshow_cover">Projects</a>
-                <a href="#contactDiv">Contact</a>
+                <p onclick="javascript: scrollFunction('#nameDiv')">About Me</p>
+                <p onclick="javascript: scrollFunction('#slideshow_cover')">Projects</p>
+                <p onclick="javascript: scrollFunction('#contactDiv')">Contact</p>
             </nav>
 
             <div id="welcomeDiv_text" class="horizontal_flex">
@@ -224,6 +226,8 @@
         </div>
 
         <script src="javascript/main.js"></script>
+
+    </div>
     </body>
     
 </html>
