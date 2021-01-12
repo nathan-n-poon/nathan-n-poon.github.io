@@ -518,9 +518,9 @@ li {
 }
 
 .inactive_slide {
-    height: var(--min-slideshow-height);
+    /* height: var(--min-slideshow-height); */
     position: absolute;
-    top: 0;
+    /* top: 0; */
     z-index: 100;
     opacity: 0;
     transition: transform .5s, opacity .5s, z-index .5s;
