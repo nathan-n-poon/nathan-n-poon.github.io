@@ -1,7 +1,6 @@
 /* body {
     overflow: hidden;
 } */
-
 :root {
     --nav-font-height: 50px;
     --default_img_height: 300px; 
@@ -36,9 +35,9 @@ body {
     font-family: "Courier New", Courier, monospace;
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
-} */
+}
 
 /* holds items in a row unless wrapping */
 .horizontal_flex {
@@ -247,6 +246,27 @@ nav{
 #BEARDiv_img_2 img {
     width: 300px;
 }
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#lostPetFinderDiv {
+    width: 100%;    
+    background-color: #e4c3e8;
+    justify-content: space-evenly;
+    /* #fcdddc */
+}
+
+#lostPetFinderDiv h1 {
+    font-size: 35px;
+    /* position: absolute; */
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    top: 5%;
+}
+
 
 /* -------------------------------------------------------------------------------------------------------- */
 
