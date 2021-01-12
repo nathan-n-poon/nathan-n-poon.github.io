@@ -12,6 +12,7 @@
 
 html {
     /* overflow-x: hidden;  */
+    scroll-behavior: smooth;
 }
 
 main {
@@ -72,38 +73,56 @@ body {
 }
 
 nav a{
-    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* padding-bottom: 50%; */
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
 }
 
-nav{
-    background-color: #c4c2bc;
 
-    width: max(45%, 300px);
-    padding-top: 1%;
-    padding-bottom: 1%;
+
+
+nav{
+    position: absolute;
+
+    width: 66%;
+    margin-top: 5%;
+    /* padding-top: 1%;
+    padding-bottom: 1%; */
 
     
     text-align: center;
-    font-size: var(--nav-font-height);
 
     align-self: center;
+
+    /* border-radius: 10px; */
+    border-bottom: 1px solid black;
 }
 
 #welcomeDiv_text {
-    text-align: center;
+    /* text-align: center;
     align-self: center;
+    */
     height: calc(100vh - var(--nav-font-height) - 2%);
     margin-top: calc(var(--nav-font-height) + 3%);
-    
 } 
+
+#welcomeDiv_message {
+    max-width: 40%;
+    display: flex;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
 #welcomeDiv h1 {
     margin-bottom: 10%;
-    font-size: 110px;
+    font-size: 100px;
 }
 
 #welcomeDiv h2 {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 
@@ -132,7 +151,8 @@ nav{
     position: relative;
     z-index: 2;
     max-width: 800px;
-    font-size: 35px;
+    padding: 2.5%;
+    font-size: 25px;
     margin: 0% 0% 7% 7%;
     background-color: lightgrey;
 }
@@ -194,7 +214,7 @@ nav{
 
 #nameDiv_text {
     padding-top: 2%;
-    width: 350px;
+    max-width: 30%;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */

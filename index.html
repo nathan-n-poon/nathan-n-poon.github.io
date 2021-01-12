@@ -17,15 +17,18 @@
         <!-- background image for first div -->
         <img class="background-image" id="welcomeDiv_cover" alt="Clouds on a blue sky" src="images/index/clouds.jpg" style="opacity: 80%;">
         <div id="welcomeDiv" class="vertical_flex main">
-            <!-- <nav>
-                <a href="gliblog.html">bloog</a>
-                <a href="tart.html">tart</a>
-            </nav> -->
+            <nav>
+                <a href="#nameDiv">About Me</a>
+                <a href="#slideshow_cover">Projects</a>
+                <a href="#contactDiv">Contact</a>
+            </nav>
 
             <div id="welcomeDiv_text" class="horizontal_flex">
-                <h1>Hello!</h1>
-
-                <h2>This is in progress right now. Check back later :)</h2>
+                <h1>Welcome</h1>
+                
+                <div id="welcomeDiv_message">
+                    <h2>This is my personal website. I update it sometimes, so please check by later :)</h2>
+                </div>
             </div>
 
             <!-- <span id="scroll_down">&#8964</span> -->
@@ -34,7 +37,7 @@
         <div id='nameDiv' class="vertical_flex main">
             <div class="horizontal_flex">
                 <div id="nameDiv_header">
-                    <h1>Nathan Poon:</h1>
+                    <h1>My name is Nathan</h1>
                     <div id="rectangle"></div>
                 </div>
 
@@ -58,7 +61,7 @@
                 </div>
 
                 <div id="nameDiv_text">
-                    <h2>If only I had wings, I could dream of flight. </h2>
+                    <h2>I'm a computer engineering student at UBC (among other things).</h2>
                 </div>
             </div>
         </div>
@@ -77,7 +80,7 @@
                     <div id="BEARDiv_text">
                         <h1>I'm a programmer on BEAR UBC:</h1>
         
-                        <h2>'"BEAR” stands for the national animal of Canada. [sic]' Click the BEAR icon below to learn more!</h2>
+                        <h2>As part of the student design team, I'm helping to make a prosthetic arm. Click the BEAR icon to learn more.</h2>
                     </div>
         
                     <div class="break"></div>
@@ -95,32 +98,6 @@
                     </div>
                 </div> 
         
-                <div id='freeDiv' class="vertical_flex my_slides">
-                    <div class="horizontal_flex">
-                        <div id="freeDiv_header">
-                            <h2>I enjoy biking and reading novels in my spare time.</h2>
-                        </div>
-                        
-                        <div>
-                            <div id="freeDiv_img_1">
-                                <img src="images/index/bike.jpg"; id="shadow" style="z-index: 2;" alt="Me on my bike">
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="break"></div>
-        
-                    <div class="horizontal_flex" style="padding-bottom: 2%;">
-                        <div id="freeDiv_img_2">
-                            <img id="dothrakiSea" src="images/index/bike2.jpg" alt="My bike in a sea of grass like russell crowe">
-                        </div>
-        
-                        <div id="freeDiv_img_3">
-                            <img id ="fear" src="images/index/dune.jpg" alt="Dune by Frank Herbert">
-                        </div>
-                    </div>
-                </div>
-        
                 <div id="schoolDiv" class="vertical_flex my_slides">
                     <h1>School Stuff</h1>
                     <div id="highlight">
@@ -132,7 +109,7 @@
                             <img src="images/index/cpp.png" class="profile_picture" alt="C++ icon">
                             <div>
                                 <ul>
-                                    <li>Intro to trees and linked lists</li>
+                                    <li>Implementing parts of the <a href="http://os161.eecs.harvard.edu/" style="color: black; text-decoration: underline;">OS161 Operating System</a></li>
                                     <li>Basic concurrency programs</li>
                                     <!-- <li>Implicit free list representation</li> -->
                                 </ul>
@@ -159,6 +136,32 @@
                                     <!-- <li>Sound file manipulation</li> -->
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id='freeDiv' class="vertical_flex my_slides">
+                    <div class="horizontal_flex">
+                        <div id="freeDiv_header">
+                            <h2>I enjoy biking and reading novels in my spare time.</h2>
+                        </div>
+                        
+                        <div>
+                            <div id="freeDiv_img_1">
+                                <img src="images/index/bike.jpg"; id="shadow" style="z-index: 2;" alt="Me on my bike">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="break"></div>
+        
+                    <div class="horizontal_flex" style="padding-bottom: 2%;">
+                        <div id="freeDiv_img_2">
+                            <img id="dothrakiSea" src="images/index/bike2.jpg" alt="My bike in a sea of grass like russell crowe">
+                        </div>
+        
+                        <div id="freeDiv_img_3">
+                            <img id ="fear" src="images/index/dune.jpg" alt="Dune by Frank Herbert">
                         </div>
                     </div>
                 </div>

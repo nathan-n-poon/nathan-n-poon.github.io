@@ -37,7 +37,7 @@ class Button {
   }
 
   // When the user scrolls down 20px from the top of the document, show the button
-  scrollFunction() {
+  showButton() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       this.mybutton.style.display = "block";
     } else {
@@ -183,7 +183,7 @@ const shadowfax = new Shadow("#rectangle", divTwoDimensions);
 
 //invocations
 window.onscroll = function() {
-  button.scrollFunction();
+  button.showButton();
   shadowfax.castShadow("nameDiv_header", "nameDiv_img_1");
 };
 window.onresize = function(event) {
