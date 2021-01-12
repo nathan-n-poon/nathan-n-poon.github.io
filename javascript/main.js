@@ -1,4 +1,7 @@
 // import * as indexClasses from 'indexClasses.js'
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// }
 
 window.mobileCheck = function() {
   let check = false;
@@ -7,7 +10,9 @@ window.mobileCheck = function() {
 };
 //functions on setup
 copySize("#nameDiv_header h1", "#nameDiv_header #rectangle");
+// var xd = document.getElementsByTagName('html');
 window.onbeforeunload = function () {
+  // document.getElementsByTagName('html').style.scroll-behavior = auto;
   window.scrollTo(0, 0);
 }
 
