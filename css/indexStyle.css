@@ -73,6 +73,10 @@ body::-webkit-scrollbar {
 #welcomeDiv {
     height: max(100vh,500px);
 }
+/* 
+nav {
+    position: absolute;
+} */
 
 nav a{
     margin-left: 10%;
