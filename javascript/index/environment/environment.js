@@ -20,6 +20,7 @@ function changeBackground() {
         spencer.style.zIndex = 10;
 
         var toChange = document.getElementById("welcomeDiv").querySelectorAll("p");
+        document.querySelector("nav").setAttribute('style', 'border-color: white');
         for (i = 0; i < toChange.length; i++)
         {
             toChange[i].style.color = "white";
@@ -37,6 +38,7 @@ function changeBackground() {
       spencer.setAttribute('style', 'color: black');
 
       var toChange = document.getElementById("welcomeDiv").querySelectorAll("p");
+      document.querySelector("nav").setAttribute('style', 'border-color: black');
       for (i = 0; i < toChange.length; i++)
       {
         toChange[i].style.color = "black";
