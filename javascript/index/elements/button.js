@@ -1,4 +1,5 @@
 //defines behaviour for a scroll to top button
+//why is it a class? idk...
 class Button {
   
     constructor(id) {
@@ -24,7 +25,7 @@ class Button {
       );
     }
   }
-  
+
   function scrollFunction(scrollElement) {
     document.querySelector(scrollElement).scrollIntoView({ 
       behavior: 'smooth' 

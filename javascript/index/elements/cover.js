@@ -1,9 +1,13 @@
+//a temporary display covering the slideshow section that goes away in a short while. 
+//is regenrated after slideshow area is offscreen for a while
+
 fadeThreshhold = false;
 inDiv = false;
 timer = 0;
 cooldown = false;
 const dimensions = new DivDimensions("slideshow_wrapper");
 
+//tells us if we are viewing the slideshow vertical area
 function aboveOrBelowDiv() {
   
   if(window.scrollY + vh(50) > dimensions.minOffset + vh(5) && window.scrollY + vh(50)  < dimensions.maxOffset - vh(5)) {
@@ -21,6 +25,7 @@ function aboveOrBelowDiv() {
   }
 }
 
+// countdows the regenration timer
 setInterval(function() {
   if(Math.round(timer) > 0 && !fadeThreshhold) {
     timer -= 1;
@@ -32,6 +37,7 @@ setInterval(function() {
   // console.log("why");
 }, 10);
 
+//invoke the cooldown and disappear functions
 setInterval(function() { if(!window.mobileCheck()) {aboveOrBelowDiv()}}, 10);
 setInterval(function() { if(!window.mobileCheck()) {cover()}}, 10);
 if(window.mobileCheck()) {  
@@ -39,6 +45,7 @@ if(window.mobileCheck()) {
   myobj.remove();
 }
 
+//controls the display of the cover 
 function cover() {
   // console.log("morgan");
   if (fadeThreshhold) {

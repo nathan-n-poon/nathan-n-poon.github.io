@@ -1,8 +1,3 @@
-
-//class definitions
-
-copySize("#nameDiv_header h1", "#nameDiv_header #rectangle");
-
 //moves shadow element corresponding to scroll position and max dimensions
 class Shadow {
   constructor(shadow, dimensions) {
@@ -39,7 +34,7 @@ class Shadow {
 }
 
 //helper functions
-//gets size of jango and copies dimensions over to boba
+//gets size of name box and copies dimensions over to the shadow
 function copySize(jango, boba) {
   width = 1*document.querySelector(jango).offsetWidth;
   height = 1*document.querySelector(jango).offsetHeight;
@@ -49,7 +44,6 @@ function copySize(jango, boba) {
 }
 
 //detects when two elements of a horizontal div are no longer in line with each other
-//todo: given a div with arbitrary elements and orientation, detect wrapping
 function detectWrap(item1, item2) {
   var h1Centre = document.getElementById(item1).offsetTop + document.getElementById(item1).offsetHeight / 2;
   var imgCentre = document.getElementById(item2).offsetTop + document.getElementById(item2).offsetHeight / 2;
@@ -67,3 +61,5 @@ function detectWrap(item1, item2) {
 //instantiations 
 const nameDiv = new DivDimensions("nameDiv");
 const shadowfax = new Shadow("#rectangle", nameDiv);
+
+copySize("#nameDiv_header h1", "#nameDiv_header #rectangle");
