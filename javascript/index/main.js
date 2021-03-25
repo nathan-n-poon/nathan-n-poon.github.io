@@ -1,5 +1,13 @@
 //functions on setup and invocations for events: scroll and resize
 
+// var ua = window.navigator.userAgent;
+//     var msie = ua.indexOf("MSIE ");
+
+//     if (msie > 0) // If Internet Explorer, return version number
+//     {
+//       document.querySelector('html').innerHTML = 'I dont support IE sorry';
+//     }
+
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
@@ -15,3 +23,8 @@ window.onresize = function(event) {
   changeBackground();
   console.log('bye');
 };
+
+if(window.document.documentMode)
+{
+  document.querySelector('html').innerHTML = 'I dont support IE sorry';
+}
